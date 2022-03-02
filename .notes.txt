@@ -1,0 +1,16 @@
+Steps taken front end: 
+-npx create-react-app frontend
+
+
+
+Steps taken back end:
+-npm init -y
+-npm i express
+-npm i cors
+-npm i dotenv
+-npm i mongoose
+-npm i --save multer
+-npm install aws-sdk
+-created directories and connection files
+-connected new mongodb collection
+node index.js

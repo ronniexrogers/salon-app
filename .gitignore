@@ -1,2 +1,2 @@
-.env
-.notes.txt
+./backend/.env
+../notes.txt
