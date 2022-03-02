@@ -1,2 +1,0 @@
-Steps taken:
--npx create-react-app frontend
