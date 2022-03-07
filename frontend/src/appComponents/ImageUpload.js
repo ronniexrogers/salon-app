@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import axios from 'axios'
-import './App.css'
+import './CSS/App.css'
 
 const postImage = async ({image, description}) => {
   const formData = new FormData();
@@ -11,26 +11,25 @@ const postImage = async ({image, description}) => {
   return result.data
 }
 
+const ImageUpload = () => {
 
-const App = () => {
+    const [file, setFile] = useState()
+    const [description, setDescription] = useState("")
+    const [images, setImages] = useState([])
+  
+    const submit = async event => {
+      event.preventDefault()
+      const result = await postImage({image: file, description})
+      setImages([result, ...images])
+    }
+    const fileSelected = event => {
+      const file = event.target.files[0]
+          setFile(file)
+      }
 
-  const [file, setFile] = useState()
-  const [description, setDescription] = useState("")
-  const [images, setImages] = useState([])
-
-  const submit = async event => {
-    event.preventDefault()
-    const result = await postImage({image: file, description})
-    setImages([result, ...images])
-  }
-  const fileSelected = event => {
-    const file = event.target.files[0]
-		setFile(file)
-	}
-
-  return (
-    <div className="App">
-      <form onSubmit={submit}>
+    return ( 
+        <div>
+        <form onSubmit={submit}>
         <input onChange={fileSelected} type="file" accept="image/*"></input>
         <input value={description} onChange={e => setDescription(e.target.value)} type="text"></input>
         <button type="submit">Submit</button>
@@ -41,8 +40,8 @@ const App = () => {
           <img alt="test" src={image.imagePath}></img>
         </div>
       ))}
-    </div>
-  );
+      </div>
+     );
 }
-
-export default App;
+ 
+export default ImageUpload;
