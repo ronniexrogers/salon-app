@@ -7,7 +7,7 @@ const postImage = async ({image, description}) => {
   formData.append("image", image)
   formData.append("description", description)
 
-  const result = await axios.post('/images', formData, { headers: {'Content-Type': 'multipart/form-data'}})
+  const result = await axios.post('/api/images', formData, { headers: {'Content-Type': 'multipart/form-data'}})
   return result.data
 }
 
@@ -29,17 +29,11 @@ const ImageUpload = () => {
 
     return ( 
         <div>
-        <form onSubmit={submit}>
-        <input onChange={fileSelected} type="file" accept="image/*"></input>
-        <input value={description} onChange={e => setDescription(e.target.value)} type="text"></input>
-        <button type="submit">Submit</button>
-      </form>
-
-      { images.map( (image, index) => (
-        <div key={index}>
-          <img alt="test" src={image.imagePath}></img>
-        </div>
-      ))}
+            <form onSubmit={submit}>
+                <input onChange={fileSelected} type="file" accept="image/*"></input>
+                <input value={description} onChange={e => setDescription(e.target.value)} type="text"></input>
+                <button type="submit">Submit</button>
+            </form>
       </div>
      );
 }

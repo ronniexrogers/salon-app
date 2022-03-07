@@ -1,5 +1,3 @@
-// models/Image.js
-// require the mongoose package from the connection pool
 const mongoose = require('../db/connection');
 
 // make a new schema with 2 properties, and assign it to a variable
@@ -9,7 +7,8 @@ const ImageSchema = new mongoose.Schema({
 });
 
 // instantiate the model, calling it "Image" and with the schema we just made
-const Image = mongoose.model('Image', ImageSchema);
+const ClientImage = mongoose.model('clientImages', ImageSchema);
+const SalonImage = mongoose.model('salonImages', ImageSchema)
 
 // export the newly created model
-module.exports = Image;
+module.exports = ClientImage, SalonImage;

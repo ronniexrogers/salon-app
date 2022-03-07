@@ -9,6 +9,7 @@ const util = require('util')
 const unlinkFile = util.promisify(fs.unlink)
 const multer  = require('multer')
 const upload = multer({ dest: 'uploads/' })
+const imageRouter = require('./routes/imageRouter')
 
 const cors = require('cors')
 app.use(cors())
@@ -18,14 +19,17 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
 
-const imageController = require('./controllers/imageController')
-app.use('/images/', imageController)
-
 app.use((err, req, res, next) => {
     const statusCode = res.statusCode || 500
     const message = err.message || 'Internal Server Error'
     res.status(statusCode).send(message)
 })
+
+//final api endpoint will be http://localhost:5001/api/client/clientImage
+app.use('/api/images', imageRouter)
+
+// app.use('/api/images', imageRouter)
+
 
 app.get('/', (req, res) => {
     res.send('Im the backend');
