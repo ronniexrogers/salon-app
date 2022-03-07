@@ -1,4 +1,4 @@
-import Calendar from './calendar';
+import Calendar from './Calendar';
 import ImageUpload from './ImageUpload'
 
 const Appointment = () => {
