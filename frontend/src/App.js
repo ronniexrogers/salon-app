@@ -2,7 +2,7 @@ import { useState } from 'react'
 import axios from 'axios'
 import './App.css'
 
-async function postImage({image, description}) {
+const postImage = async ({image, description}) => {
   const formData = new FormData();
   formData.append("image", image)
   formData.append("description", description)
@@ -21,9 +21,8 @@ const App = () => {
   const submit = async event => {
     event.preventDefault()
     const result = await postImage({image: file, description})
-    setImages([result.image, ...images])
+    setImages([result, ...images])
   }
-
   const fileSelected = event => {
     const file = event.target.files[0]
 		setFile(file)
@@ -37,6 +36,11 @@ const App = () => {
         <button type="submit">Submit</button>
       </form>
 
+      { images.map( (image, index) => (
+        <div key={index}>
+          <img alt="test" src={image.imagePath}></img>
+        </div>
+      ))}
     </div>
   );
 }

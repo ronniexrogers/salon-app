@@ -13,4 +13,6 @@ Steps taken back end:
 -npm install aws-sdk
 -created directories and connection files
 -connected new mongodb collection
+-touch procfile // web: node index.js
 node index.js
+-setup proxy server to connect front end to backend
