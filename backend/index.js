@@ -9,7 +9,7 @@ const util = require('util')
 const unlinkFile = util.promisify(fs.unlink)
 const multer  = require('multer')
 const upload = multer({ dest: 'uploads/' })
-const imageRouter = require('./routes/imageRouter')
+const imageRouter = require('./routes/Router')
 
 const cors = require('cors')
 app.use(cors())
@@ -26,7 +26,7 @@ app.use((err, req, res, next) => {
 })
 
 //final api endpoint will be http://localhost:5001/api/client/clientImage
-app.use('/api/images', imageRouter)
+app.use('/api/createAppointment', imageRouter)
 
 // app.use('/api/images', imageRouter)
 

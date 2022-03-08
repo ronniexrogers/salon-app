@@ -1,13 +1,15 @@
 const mongoose = require('../db/connection');
 
 // make a new schema with 2 properties, and assign it to a variable
-const ImageSchema = new mongoose.Schema({
-	path: String,
+const AppointmentSchema = new mongoose.Schema({
+	name: String,
+	number: String,
+    description: String,
+    imagePath: String
 });
 
 // instantiate the model, calling it "Image" and with the schema we just made
-const ClientImage = mongoose.model('clientImages', ImageSchema);
-const SalonImage = mongoose.model('salonImages', ImageSchema)
+const Appointment = mongoose.model('clientAppointment', AppointmentSchema);
 
 // export the newly created model
-module.exports = ClientImage, SalonImage;
+module.exports = Appointment

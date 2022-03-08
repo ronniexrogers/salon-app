@@ -1,13 +1,19 @@
-import Calendar from './Calendar';
-import ImageUpload from './ImageUpload'
+import AppointmentCreate from './AppointmentCreate'
+import { Link } from "react-router-dom";
 
-const Appointment = () => {
+const Appointment = ({ isLoggedIn }) => {
+
+    if (isLoggedIn) {
     return ( 
         <div className="appointment">
-            <Calendar />
-            <ImageUpload />
+            <AppointmentCreate />
         </div>
-     );
+     ) } return (
+         <div>
+             You need to <Link to="/signin">sign In</Link> first!
+            
+         </div>
+     )
 }
- 
+
 export default Appointment;
