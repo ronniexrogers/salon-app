@@ -13,6 +13,7 @@
     "fs": "^0.0.1-security",
     "http-proxy-middleware": "^2.0.3",
     "react": "^17.0.2",
+    "react-datetime-picker": "^3.5.0",
     "react-dom": "^17.0.2",
     "react-google-login": "^5.2.2",
     "react-router-dom": "^6.2.2",

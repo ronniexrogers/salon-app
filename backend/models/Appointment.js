@@ -3,6 +3,7 @@ const mongoose = require('../db/connection');
 // make a new schema with 2 properties, and assign it to a variable
 const AppointmentSchema = new mongoose.Schema({
 	name: String,
+    date: String,
 	number: String,
     description: String,
     imagePath: String

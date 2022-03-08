@@ -31,6 +31,7 @@ router.post('/', upload.single('image'), async (req, res) => {
       description: req.body.description,
       name: req.body.clientName,
       number: req.body.number,
+      date: req.body.date
     }
     await new Appointment(appointmentData).save()
   })

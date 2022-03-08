@@ -1,17 +1,18 @@
 import { useState } from 'react'
 import axios from 'axios'
 import './CSS/App.css'
+import DateTimePicker from 'react-datetime-picker';
 
-const postImage = async ({image, description, clientName, number}) => {
+const postImage = async ({image, description, clientName, number, appointmentDate}) => {
   const formData = new FormData();
   formData.append("image", image)
   formData.append("description", description)
   formData.append("clientName", clientName)
   formData.append("number", number)
+  formData.append("date", appointmentDate)
   const result = await axios.post('/api/createAppointment', formData, { headers: {'Content-Type': 'multipart/form-data'}})
   return result.data
 }
-
 const AppointmentCreate = () => {
 
     const [file, setFile] = useState()
@@ -19,10 +20,11 @@ const AppointmentCreate = () => {
     const [clientName, setClientName] = useState("")
     const [number, setNumber] = useState("")
     const [images, setImages] = useState([])
+    const [appointmentDate, setAppointmentDate] = useState(new Date())
   
     const submit = async event => {
       event.preventDefault()
-      const result = await postImage({image: file, description, clientName, number})
+      const result = await postImage({image: file, description, clientName, number, appointmentDate})
       setImages([result, ...images])
     }
     const fileSelected = event => {
@@ -37,6 +39,7 @@ const AppointmentCreate = () => {
     return ( 
         <div>
             <form id="clientUpload" onSubmit={submit}>
+                <DateTimePicker onChange={setAppointmentDate} value={appointmentDate} />
                 <input className="input-text" placeholder='Name' onChange={e => setClientName(e.target.value)} type="text"></input>
                 <input className="input-text" placeholder='Phone Number' onChange={e => setNumber(e.target.value)} type="text"></input>
                 <input className="input-text" placeholder='Description of Service' onChange={e => setDescription(e.target.value)} type="text"></input>
