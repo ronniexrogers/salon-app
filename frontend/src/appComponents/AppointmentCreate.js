@@ -2,6 +2,7 @@ import { useState } from 'react'
 import axios from 'axios'
 import './CSS/App.css'
 import DateTimePicker from 'react-datetime-picker';
+// import DateTimePicker from 'react-datetime-picker/dist/entry.nostyle'
 
 const postImage = async ({image, description, clientName, number, appointmentDate}) => {
   const formData = new FormData();
@@ -22,13 +23,13 @@ const AppointmentCreate = () => {
     const [images, setImages] = useState([])
     const [appointmentDate, setAppointmentDate] = useState(new Date())
   
-    const submit = async event => {
-      event.preventDefault()
+    const submit = async (e) => {
+      e.preventDefault()
       const result = await postImage({image: file, description, clientName, number, appointmentDate})
       setImages([result, ...images])
     }
-    const fileSelected = event => {
-      const file = event.target.files[0]
+    const fileSelected = (e) => {
+      const file = e.target.files[0]
           setFile(file)
       }
     const resetForm = () => {

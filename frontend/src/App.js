@@ -7,18 +7,20 @@ import Gallery from './appComponents/Gallery'
 import Appointment from './appComponents/Appointment'
 import About from './appComponents/About'
 import Contact from './appComponents/Contact'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 
 const App = () => {
 
   const [isLoggedIn, setIsLoggedIn] = useState(false)
+
+  console.log(localStorage.getItem('token'))
   console.log(isLoggedIn)
 
   return (
     <div className="App">
       <Router>
-        <Nav isLoggedIn={isLoggedIn} />
+        <Nav setIsLoggedIn={ setIsLoggedIn } isLoggedIn={isLoggedIn} />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/signin" element={<SignIn setIsLoggedIn={ setIsLoggedIn } isLoggedIn={isLoggedIn} />} />

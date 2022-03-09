@@ -3,7 +3,7 @@ import { GoogleLogin, GoogleLogout } from 'react-google-login'
 import { useNavigate } from 'react-router-dom'
 
 
-const SignIn = ({ isLoggedIn, setIsLoggedIn }) => {
+const SignIn = ({ setJwt, isLoggedIn, setIsLoggedIn }) => {
     
     const clientId = '996392350039-svujvj42te46nbsotn01j8pgv2p40nq3.apps.googleusercontent.com'
     const [showLoginButton, setShowLoginButton] = useState(true)
@@ -11,10 +11,11 @@ const SignIn = ({ isLoggedIn, setIsLoggedIn }) => {
     const navigate = useNavigate()
 
     const onLoginSuccess = (res) => {
-        console.log('login success', res.profileObj)
+        console.log(res)
         setShowLoginButton(false)
         setShowLogoutButton(true)
         setIsLoggedIn(true)
+        navigate("/appointment")
     }
 
     const onLoginFailure = (res) => {
@@ -29,24 +30,18 @@ const SignIn = ({ isLoggedIn, setIsLoggedIn }) => {
     }
 
     return ( 
-        <div onClick={() => navigate("/appointment")} className="sign-in">
+        <div className="sign-in">
             {showLoginButton ? 
             <GoogleLogin
                 clientId={clientId}
                 buttonText="Login"
                 onSuccess={onLoginSuccess}
                 onFailure={onLoginFailure}
-                cookiePolicy={'none'}
+                cookiePolicy={'single_host_origin'}
                 SameSite="None"
                 isSignedIn={true}
+                accesstype= 'offline'
             />  : null} 
-            {showLogoutButton ? 
-            <GoogleLogout
-                clientId={clientId}
-                buttonText="Logout"
-                onLogoutSuccess={onLogoutSuccess}
-                SameSite="None"
-            /> : null}
         </div>
      );
 }
