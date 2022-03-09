@@ -14,9 +14,6 @@ const App = () => {
 
   const [isLoggedIn, setIsLoggedIn] = useState(false)
 
-  console.log(localStorage.getItem('token'))
-  console.log(isLoggedIn)
-
   return (
     <div className="App">
       <Router>

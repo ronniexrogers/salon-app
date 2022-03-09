@@ -1,13 +1,8 @@
 import AppointmentCreate from './AppointmentCreate'
 import { Link } from "react-router-dom";
-import { useNavigate } from 'react-router-dom'
-import { useEffect } from 'react';
 
 
 const Appointment = ({ jwt, isLoggedIn }) => {
-    console.log(isLoggedIn)
-
-    const navigate = useNavigate()
 
     if (isLoggedIn) {
     return ( 
@@ -15,10 +10,6 @@ const Appointment = ({ jwt, isLoggedIn }) => {
             <AppointmentCreate />
         </div>
      ) }
-            // navigate("/signin")
-            // return (
-            //     <div>loading...</div>
-            // )
 
      return (
          <div>
