@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom"
 import { GoogleLogin, GoogleLogout } from 'react-google-login'
-import { useState } from "react";
+import { useState } from "react"
 import GoogleButton from 'react-google-button'
 
 const Nav = ({ userData, setIsLoggedIn, isLoggedIn }) => {
@@ -36,7 +36,7 @@ const Nav = ({ userData, setIsLoggedIn, isLoggedIn }) => {
                     /> : null}
                 </nav>
             </div>
-         ); 
+         )
     }
     return ( 
         <div className="nav">
@@ -48,7 +48,7 @@ const Nav = ({ userData, setIsLoggedIn, isLoggedIn }) => {
                 <Link to="/contact"> Contact Me </Link>
             </nav>
         </div>
-     );
+     )
 }
  
-export default Nav;
+export default Nav

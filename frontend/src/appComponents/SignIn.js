@@ -60,7 +60,7 @@ const SignIn = ({ userData, setUserData, isLoggedIn, setIsLoggedIn }) => {
                 accesstype= 'offline'
             />  : null} 
         </div>
-     );
+     )
 }
  
-export default SignIn;
+export default SignIn

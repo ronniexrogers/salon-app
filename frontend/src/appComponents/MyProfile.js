@@ -18,7 +18,7 @@ const MyProfile = ({ dataFromDB }) => {
     }, [])
 
     const postImage = async ({image, description}) => {
-        const formData = new FormData();
+        const formData = new FormData()
         formData.append("image", image)
         formData.append("description", description)
         formData.append("type", type)
@@ -80,7 +80,7 @@ const MyProfile = ({ dataFromDB }) => {
             Hello, {dataFromDB.firstName}!
             <img className="profile-picture" src={dataFromDB.profilePicturePath} alt="profile" />
         </div>
-     );
+     )
 }
 
-export default MyProfile;
+export default MyProfile

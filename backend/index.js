@@ -35,8 +35,8 @@ app.use('/api/salonPhotos', imageRouter)
 
 
 app.get('/', (req, res) => {
-    res.send('Im the backend');
-  });
+    res.send('Im the backend')
+  })
 
   
 //Start Server

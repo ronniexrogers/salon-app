@@ -1,11 +1,10 @@
 import { useState } from 'react'
 import axios from 'axios'
 import './CSS/App.css'
-import DateTimePicker from 'react-datetime-picker';
-// import DateTimePicker from 'react-datetime-picker/dist/entry.nostyle'
+import DateTimePicker from 'react-datetime-picker'
 
 const postImage = async ({image, description, clientName, number, appointmentDate}) => {
-  const formData = new FormData();
+  const formData = new FormData()
   formData.append("image", image)
   formData.append("description", description)
   formData.append("clientName", clientName)
@@ -51,4 +50,4 @@ const AppointmentCreate = ({ userData }) => {
      )
 }
  
-export default AppointmentCreate;
+export default AppointmentCreate

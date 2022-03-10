@@ -1,5 +1,5 @@
 import AppointmentCreate from './AppointmentCreate'
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom"
 
 
 const Appointment = ({ userData, isLoggedIn }) => {
@@ -18,4 +18,4 @@ const Appointment = ({ userData, isLoggedIn }) => {
      )
 }
 
-export default Appointment;
+export default Appointment

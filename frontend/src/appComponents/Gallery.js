@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from "react"
 const axios = require('axios')
 
 const Gallery = () => {
@@ -50,7 +50,7 @@ const Gallery = () => {
             </div>
 
         </div>
-     );
+     )
 }
  
-export default Gallery;
+export default Gallery
