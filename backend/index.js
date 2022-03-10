@@ -11,6 +11,7 @@ const multer  = require('multer')
 const upload = multer({ dest: 'uploads/' })
 const router = require('./routes/Router')
 const userRouter = require('./routes/UserRouter')
+const imageRouter = require('./routes/ImageRouter')
 
 const cors = require('cors')
 app.use(cors())
@@ -26,11 +27,11 @@ app.use((err, req, res, next) => {
     res.status(statusCode).send(message)
 })
 
-//final api endpoint will be http://localhost:5001/api/appointments
 app.use('/api/appointments', router)
 
-//final api endpoint will be http://localhost:5001/api/users
 app.use('/api/users', userRouter)
+
+app.use('/api/salonPhotos', imageRouter)
 
 
 app.get('/', (req, res) => {

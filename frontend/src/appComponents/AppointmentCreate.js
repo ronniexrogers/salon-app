@@ -35,7 +35,7 @@ const AppointmentCreate = ({ userData }) => {
       }
     const resetForm = () => {
       document.getElementById('client-image-input').value=(null)
-      document.querySelectorAll('input-text').value=(null)
+      document.querySelectorAll('input-text').value=('')
     }
 
     return ( 

@@ -5,6 +5,7 @@ Steps taken front end:
 -npm i react google-login
 -npm install react-datetime-picker
 -npm i --save react-google-button
+-npm i --save react-google-recaptcha
 
 
 
