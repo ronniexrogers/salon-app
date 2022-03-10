@@ -2,12 +2,12 @@ import AppointmentCreate from './AppointmentCreate'
 import { Link } from "react-router-dom";
 
 
-const Appointment = ({ jwt, isLoggedIn }) => {
+const Appointment = ({ userData, isLoggedIn }) => {
 
     if (isLoggedIn) {
     return ( 
         <div className="appointment">
-            <AppointmentCreate />
+            <AppointmentCreate userData={ userData } />
         </div>
      ) }
 

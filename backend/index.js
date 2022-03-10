@@ -26,11 +26,11 @@ app.use((err, req, res, next) => {
     res.status(statusCode).send(message)
 })
 
-//final api endpoint will be http://localhost:5001/api/createAppointment
-app.use('/api/createAppointment', router)
+//final api endpoint will be http://localhost:5001/api/appointments
+app.use('/api/appointments', router)
 
-//final api endpoint will be http://localhost:5001/api/createUser
-app.use('/api/createUser', userRouter)
+//final api endpoint will be http://localhost:5001/api/users
+app.use('/api/users', userRouter)
 
 
 app.get('/', (req, res) => {

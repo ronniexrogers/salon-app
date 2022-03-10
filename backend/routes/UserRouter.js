@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 const User = require('../models/User')
 
-router.post('/', async (req, res) => {
+router.post('/createUser', async (req, res) => {
     console.log(req.body)
     const userData = {
       firstName: req.body.firstName,
@@ -10,10 +10,19 @@ router.post('/', async (req, res) => {
       email: req.body.email,
       googleId: req.body.googleId,
       profilePicturePath: req.body.profilePicturePath,
-      role: 'client',
     }
     await new User(userData).save()
   })
 
+router.get('/:id', async (req, res, next) => {
+    try{
+        const user = await User.find({ googleId: req.params.id })
+        res.json(user)
+    } catch(err){
+        next(err)
+    }
+})
+
 
 module.exports = router
+

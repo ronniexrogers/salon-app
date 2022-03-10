@@ -4,24 +4,22 @@ import { useNavigate } from 'react-router-dom'
 const axios = require('axios')
 
 
-const SignIn = ({ setJwt, isLoggedIn, setIsLoggedIn }) => {
+const SignIn = ({ userData, setUserData, isLoggedIn, setIsLoggedIn }) => {
     
     const clientId = '996392350039-svujvj42te46nbsotn01j8pgv2p40nq3.apps.googleusercontent.com'
     const [showLoginButton, setShowLoginButton] = useState(true)
     const [showLogoutButton, setShowLogoutButton] = useState(false)
-    const [userData, setUserData] = useState(null)
     const navigate = useNavigate()
 
-    const createUser = async (firstName, lastName, email, googleId, profilePicturePath, role) => {
+    const createUser = async () => {
         const userInfo = {
             firstName: userData.givenName,
             lastName: userData.familyName,
             email: userData.email,
             googleId: userData.googleId,
             profilePicturePath: userData.imageUrl,
-            role: 'client'
         }
-        const result = await axios.post('/api/createUser', userInfo, { headers: {'Content-Type': 'application/json'}})
+        const result = await axios.post('/api/users/createUser', userInfo, { headers: {'Content-Type': 'application/json'}})
         return result.data
     }
 

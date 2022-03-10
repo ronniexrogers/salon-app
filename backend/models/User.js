@@ -7,7 +7,6 @@ const UserSchema = new mongoose.Schema({
     googleId: String,
     email: String,
     profilePicturePath: String,
-    role: String
 });
 
 // instantiate the model, calling it "Image" and with the schema we just made

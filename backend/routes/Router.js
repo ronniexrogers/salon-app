@@ -8,10 +8,11 @@ const multer  = require('multer')
 const upload = multer({ dest: 'uploads/' })
 const imageController = require('../controllers/imageController')
 const Appointment = require('../models/Appointment')
-const User = require('../models/User')
+
 
 const { google0authHandler } = require('../controllers/SessionController')
 const { uploadFile, downloadFile } = require('../s3')
+const { default: axios } = require('axios')
 
 
 router.get('/:key', (req, res) => {
@@ -20,7 +21,7 @@ router.get('/:key', (req, res) => {
     readStream.pipe(res)
   })
   
-router.post('/', upload.single('image'), async (req, res) => {
+router.post('/createAppointment', upload.single('image'), async (req, res) => {
     const file = req.file
     console.log(file)
     const result = await uploadFile(file)
@@ -36,6 +37,14 @@ router.post('/', upload.single('image'), async (req, res) => {
     await new Appointment(appointmentData).save()
   })
 
+router.get('/', async (req, res, next) => {
+  try{
+      const allAppointments = await Appointment.find()
+      res.json(allAppointments)
+  } catch(err){
+      next(err)
+  }
+})
 
 
 module.exports = router

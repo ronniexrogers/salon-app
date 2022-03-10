@@ -11,10 +11,10 @@ const postImage = async ({image, description, clientName, number, appointmentDat
   formData.append("clientName", clientName)
   formData.append("number", number)
   formData.append("date", appointmentDate)
-  const result = await axios.post('/api/createAppointment', formData, { headers: {'Content-Type': 'multipart/form-data'}})
+  const result = await axios.post('/api/appointments/createAppointment', formData, { headers: {'Content-Type': 'multipart/form-data'}})
   return result.data
 }
-const AppointmentCreate = () => {
+const AppointmentCreate = ({ userData }) => {
 
     const [file, setFile] = useState()
     const [description, setDescription] = useState("")
@@ -22,6 +22,7 @@ const AppointmentCreate = () => {
     const [number, setNumber] = useState("")
     const [images, setImages] = useState([])
     const [appointmentDate, setAppointmentDate] = useState(new Date())
+    console.log(userData)
   
     const submit = async (e) => {
       e.preventDefault()
