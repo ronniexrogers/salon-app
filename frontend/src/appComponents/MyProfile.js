@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
 const axios = require('axios')
 
 const MyProfile = ({ dataFromDB }) => {
     const [appointments, setAppointments] = useState(null)
     const [description, setDescription] = useState(null)
+    const [type, setType] = useState(null)
     const [images, setImages] = useState([])
     const [file, setFile] = useState()
 
@@ -19,8 +21,8 @@ const MyProfile = ({ dataFromDB }) => {
         const formData = new FormData();
         formData.append("image", image)
         formData.append("description", description)
+        formData.append("type", type)
         const result = await axios.post('/api/salonPhotos', formData, { headers: {'Content-Type': 'multipart/form-data'}})
-        console.log(result.data)
         return result.data
       }
 
@@ -34,7 +36,7 @@ const MyProfile = ({ dataFromDB }) => {
             setFile(file)
         }
     
-    if(!dataFromDB) return (<p>oopsie, what're ya doin here?! Login first!</p>)
+    if(!dataFromDB) return (<p>oopsie, what're ya doin here?! You need to <Link to="/signin">sign in</Link> first!</p>)
 
     else if(dataFromDB.googleId === '114694917534994982394' || '110622259906074900624') {
 
@@ -45,8 +47,12 @@ const MyProfile = ({ dataFromDB }) => {
                 <div className="admin-upload-div">
                     <h3>Upload to Gallery</h3>
                     <form id="admin-upload" onSubmit={submit}>
-                    <input className="input-text" placeholder='Description of photo' onChange={e => setDescription(e.target.value)} type="text"></input>
-                    <input id="client-image-input" onChange={fileSelected} type="file" accept="image/*"></input>
+                    <input required={true} className="input-text" placeholder='Description of photo' onChange={e => setDescription(e.target.value)} type="text"></input>
+                    <label for="hair">Hair</label>
+                    <input id="hair" type="checkbox" name="hair" value="hair" onChange={e => setType(e.target.value)} />
+                    <label for="nails">Nails</label>
+                    <input id="nails" type="checkbox" name="nails" value="nails" onChange={e => setType(e.target.value)} />
+                    <input required={true} id="client-image-input" onChange={fileSelected} type="file" accept="image/*"></input>
                     <button type="submit">Submit</button>
                     </form>
                 </div>

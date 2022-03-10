@@ -25,10 +25,6 @@ const App = () => {
     })
   }, [userData])
 
-  console.log(dataFromDB)
-
-  
-
 
   return (
     <div className="App">

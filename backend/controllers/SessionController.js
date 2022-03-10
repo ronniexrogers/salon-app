@@ -9,7 +9,6 @@ async function google0authHandler(req, res) {
 
     // get id and access token from the code
     const {id_token, access_token} = await getGoogle0AuthTokens({code})
-    console.log({id_token, access_token})
 
     //get user with tokens
 

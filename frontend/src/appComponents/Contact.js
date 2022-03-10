@@ -40,7 +40,7 @@ const Contact = () => {
 
     return ( 
         <div className="contact-form">
-            <h1 className="contact-form-header">Contact Us</h1>
+            <h1 className="contact-form-header">Contact Me</h1>
             <form onSubmit={ handleSubmit }>
                 <input type="text" required={true} name="name" placeholder="Name" onChange={(e) => setName(e.target.value)}></input>
                 <input type="text" required={true} name="email" placeholder="Email" onChange={(e) => setEmail(e.target.value)}></input>

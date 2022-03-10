@@ -22,7 +22,6 @@ const AppointmentCreate = ({ userData }) => {
     const [number, setNumber] = useState("")
     const [images, setImages] = useState([])
     const [appointmentDate, setAppointmentDate] = useState(new Date())
-    console.log(userData)
   
     const submit = async (e) => {
       e.preventDefault()

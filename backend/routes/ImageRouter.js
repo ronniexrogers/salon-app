@@ -30,6 +30,7 @@ router.post('/', upload.single('image'), async (req, res) => {
   const photoData = {
     imagePath: result.Location,
     description: req.body.description,
+    type: req.body.type
   }
   await new Image(photoData).save()
 })
