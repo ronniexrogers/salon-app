@@ -16,6 +16,7 @@ const Gallery = () => {
 
     return ( 
         <div className="gallery">
+            <h1>Gallery</h1>
             {
                 salonPhotos.map(photo => (
                     <img key={photo._id} src={photo.imagePath} alt={photo.description} />

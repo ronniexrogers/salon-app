@@ -19,10 +19,10 @@ const Nav = ({ userData, setIsLoggedIn, isLoggedIn }) => {
                 <nav>
                     Hi, {userData.name}! 
                     <Link to="/"> Home </Link> |
-                    <Link to="/appointment"> Create Appointment </Link> |
+                    <Link to="/appointment"> Book an Appointment </Link> |
                     <Link to="/gallery"> Gallery </Link> |
                     <Link to="/about"> About </Link> |
-                    <Link to="/contact"> Contact Us </Link> |
+                    <Link to="/contact"> Contact Me </Link> |
                     <Link to="/myProfile"> My Profile</Link> |
                     {isLoggedIn ? 
                     <GoogleLogout
@@ -42,10 +42,10 @@ const Nav = ({ userData, setIsLoggedIn, isLoggedIn }) => {
         <div className="nav">
             <nav>
                 <Link to="/">Home </Link> |
-                <Link to="/appointment"> Create Appointment </Link> |
+                <Link to="/appointment"> Book an Appointment </Link> |
                 <Link to="/gallery"> Gallery </Link> |
                 <Link to="/about"> About </Link> |
-                <Link to="/contact"> Contact Us </Link>
+                <Link to="/contact"> Contact Me </Link>
             </nav>
         </div>
      );

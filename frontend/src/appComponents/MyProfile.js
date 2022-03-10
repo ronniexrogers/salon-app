@@ -34,8 +34,9 @@ const MyProfile = ({ dataFromDB }) => {
             setFile(file)
         }
     
+    if(!dataFromDB) return (<p>oopsie, what're ya doin here?! Login first!</p>)
 
-    if(dataFromDB.googleId === '114694917534994982394' || '110622259906074900624') {
+    else if(dataFromDB.googleId === '114694917534994982394' || '110622259906074900624') {
 
 
         return (
@@ -66,8 +67,8 @@ const MyProfile = ({ dataFromDB }) => {
                 </div>
             </div>
         )
-    } else 
-
+    }
+    else 
     return ( 
         <div className="my-profile">
             Hello, {dataFromDB.firstName}!
