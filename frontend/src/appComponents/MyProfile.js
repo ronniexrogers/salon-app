@@ -14,14 +14,16 @@ const MyProfile = ({ dataFromDB }) => {
     const todaysDate = new Date().valueOf()
 
 
-
+    const handleDeleteOne = (id) => {
+        axios.delete(`http://localhost:5001/api/appointments/${id}`)
+    }
 
     useEffect(() => {
         axios.get(`http://localhost:5001/api/appointments`)
         .then ((res) => {
             setAppointments(res.data)
         })
-    }, [])
+    }, [appointments])
 
     const postImage = async ({image, description}) => {
         const formData = new FormData()
@@ -81,6 +83,7 @@ const MyProfile = ({ dataFromDB }) => {
                         <li>{appointment.number}</li>
                         <li>{appointment.description}</li>
                         <img src={appointment.imagePath} alt="appointment inspiration" />
+                        <button onClick={() => handleDeleteOne(appointment._id)}>Delete Appointment</button>
                         </ul>
                     </div>
 
@@ -98,6 +101,7 @@ const MyProfile = ({ dataFromDB }) => {
                         <li>{appointment.number}</li>
                         <li>{appointment.description}</li>
                         <img src={appointment.imagePath} alt="appointment inspiration" />
+                        <button onClick={() => handleDeleteOne(appointment._id)}>Delete Appointment</button>
                         </ul>
                     </div>
 
