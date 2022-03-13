@@ -25,7 +25,6 @@ const Gallery = () => {
     }, [allPhotos])
 
 
-
     if(!allPhotos) return (<p>loading...</p>)
     else
     return ( 

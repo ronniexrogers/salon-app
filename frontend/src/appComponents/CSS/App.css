@@ -40,3 +40,33 @@ img {
   margin-top: -50px;
   margin-left: -50px;
 }
+
+.appointment-modal{
+  display: none;
+  position: fixed;
+  z-index: 1; 
+  background-color: rgba(240, 176, 198, 0.5);
+  border: 2px solid black;
+  width: 500px;
+  height: 25%;
+}
+
+.contact-modal{
+  display: none;
+  position: fixed;
+  z-index: 1; 
+  background-color: rgba(240, 176, 198, 0.5);
+  border: 2px solid black;
+  width: 500px;
+  height: 25%;
+}
+
+.loggedout-modal{
+  display: none;
+  position: fixed;
+  z-index: 1; 
+  background-color: rgba(240, 176, 198, 0.5);
+  border: 2px solid black;
+  width: 500px;
+  height: 25%;
+}

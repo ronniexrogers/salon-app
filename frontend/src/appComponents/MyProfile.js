@@ -58,21 +58,24 @@ const MyProfile = ({ dataFromDB }) => {
             <div className="my-profile">
                 <h1>Admin Dashboard</h1>
                 <div className="admin-upload-div">
-                    <h3>Upload to Gallery</h3>
+                    <h2>Upload to Gallery</h2>
                     <form id="admin-upload" onSubmit={submit}>
+                    <h4>Description of service</h4>
                     <input required={true} className="input-text" placeholder='Description of photo' onChange={e => setDescription(e.target.value)} type="text"></input>
-                    <label>Hair</label>
-                    <input id="hair" type="checkbox" name="hair" value="hair" onChange={e => setType(e.target.value)} />
-                    <label>Nails</label>
-                    <input id="nails" type="checkbox" name="nails" value="nails" onChange={e => setType(e.target.value)} />
-                    <input required={true} id="client-image-input" onChange={fileSelected} type="file" accept="image/*"></input>
+                    <h4>Type of service</h4>
+                    <select required={true}>
+                        <option value="hair">Hair</option>
+                        <option value="nails">Nails</option>
+                    </select>
+                    <h4>Select image</h4>
+                    <input required={true} id="salon-image-input" onChange={fileSelected} type="file" accept="image/*"></input>
                     <button type="submit">Submit</button>
                     </form>
                 </div>
                 <div className="all-appointments-div">
 
                 <div className="future-appointments-div">
-                <h3>Upcoming Appointments</h3>
+                <h2>Upcoming Appointments</h2>
                 { futureAppointments ? futureAppointments.sort((a, b) => {
                 return Date.parse(a.date) - Date.parse(b.date)
                 }).map(appointment => (
@@ -90,7 +93,7 @@ const MyProfile = ({ dataFromDB }) => {
                 )) : <p>No upcoming appointments!</p>}
                 </div>
                 <div className="past-appointments-div">
-                <h3>Previous Appointments</h3>
+                <h2>Previous Appointments</h2>
                 { pastAppointments ? pastAppointments.sort((a, b) => {
                 return  Date.parse(b.date) - Date.parse(a.date)
                 }).map(appointment => (

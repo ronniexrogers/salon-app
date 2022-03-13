@@ -1,5 +1,6 @@
 import { useRef, useState } from "react"
 import ReCAPTCHA from "react-google-recaptcha"
+import { useNavigate } from "react-router-dom"
 const axios = require('axios')
 
 const Contact = () => {
@@ -12,6 +13,8 @@ const Contact = () => {
     const [number, setNumber] = useState('')
     const [email, setEmail] = useState('')
     const [recaptchaToken, setRecaptchaToken] = useState('')
+    const modal = document.querySelector('.contact-modal')
+    const navigate = useNavigate()
 
     const updateRecaptchaToken = (token) => {
         setRecaptchaToken(token)
@@ -33,10 +36,16 @@ const Contact = () => {
         try {
             await axios.post(formSparkUrl, formData)
             recaptchaRef.current.reset()
+            modal.style.display = "block"
         }catch(err) {
-            console.log(err)
+            alert(err)
         }
     }
+
+    const handleCloseModal = () => {
+        modal.style.display = "none"
+        navigate('/')
+      }
 
     return ( 
         <div className="contact-form">
@@ -53,6 +62,10 @@ const Contact = () => {
                 />
                 <button type="submit">Submit</button>
             </form>
+            <div className="contact-modal">
+                Thanks for contacting me! I'll be in touch soon.
+                <button onClick={() => handleCloseModal()}>Close</button>
+            </div>
         </div>
      )
 }

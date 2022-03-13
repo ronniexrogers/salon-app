@@ -2,16 +2,24 @@ import { Link } from "react-router-dom"
 import { GoogleLogin, GoogleLogout } from 'react-google-login'
 import { useState } from "react"
 import GoogleButton from 'react-google-button'
+import { useNavigate } from "react-router-dom"
 
 const Nav = ({ userData, setIsLoggedIn, isLoggedIn }) => {
     const [showLogoutButton, setShowLogoutButton] = useState(false)
     const clientId = '996392350039-svujvj42te46nbsotn01j8pgv2p40nq3.apps.googleusercontent.com'
+    const navigate = useNavigate()
+    const modal = document.querySelector('.loggedout-modal')
 
     const onLogoutSuccess = () => {
-        alert('logout success')
         setShowLogoutButton(false)
         setIsLoggedIn(false)
+        modal.style.display = "block"
     }
+
+    const handleCloseModal = () => {
+        modal.style.display = "none"
+        navigate('/')
+      }
 
     if(isLoggedIn){
         return ( 
@@ -35,6 +43,10 @@ const Nav = ({ userData, setIsLoggedIn, isLoggedIn }) => {
                           )}
                     /> : null}
                 </nav>
+                <div className="loggedout-modal">
+                    Succesfully logged out!
+                    <button onClick={() => handleCloseModal()}>Close</button>
+                </div>
             </div>
          )
     }
