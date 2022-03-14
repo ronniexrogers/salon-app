@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import Footer from './Footer'
 
 const axios = require('axios')
 
@@ -112,6 +113,7 @@ const MyProfile = ({ dataFromDB }) => {
                 </div>
                     
                 </div>
+            <Footer />
             </div>
         )
     }
@@ -120,6 +122,7 @@ const MyProfile = ({ dataFromDB }) => {
         <div className="my-profile">
             Hello, {dataFromDB.firstName}!
             <img className="profile-picture" src={dataFromDB.profilePicturePath} alt="profile" />
+            <Footer />
         </div>
      )
 }

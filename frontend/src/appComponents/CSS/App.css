@@ -70,3 +70,8 @@ img {
   width: 500px;
   height: 25%;
 }
+
+.footer{
+  background-color: rgba(243, 178, 229, 0.575);
+  border: solid black 1px
+}

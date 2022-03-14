@@ -1,6 +1,7 @@
 import { useRef, useState } from "react"
 import ReCAPTCHA from "react-google-recaptcha"
 import { useNavigate } from "react-router-dom"
+import Footer from "./Footer"
 const axios = require('axios')
 
 const Contact = () => {
@@ -66,6 +67,7 @@ const Contact = () => {
                 Thanks for contacting me! I'll be in touch soon.
                 <button onClick={() => handleCloseModal()}>Close</button>
             </div>
+            <Footer />
         </div>
      )
 }

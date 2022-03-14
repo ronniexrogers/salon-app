@@ -8,6 +8,7 @@ import Appointment from './appComponents/Appointment'
 import About from './appComponents/About'
 import Contact from './appComponents/Contact'
 import MyProfile from './appComponents/MyProfile'
+import Footer from './appComponents/Footer'
 import { useEffect, useState } from 'react'
 const axios = require('axios')
 
