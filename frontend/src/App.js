@@ -18,6 +18,9 @@ const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [userData, setUserData] = useState({})
   const [dataFromDB, setDataFromDB] = useState(null)
+  const headers = {
+    "Access-Control-Allow-Origin": "https://denisse-app-backend.herokuapp.com"
+  }
 
   useEffect(() => {
     axios.get(`https://denisse-app-backend.herokuapp.com/api/users/${userData.googleId}`)
@@ -25,6 +28,8 @@ const App = () => {
       setDataFromDB(res.data[0])
     })
   }, [userData])
+  console.log(dataFromDB)
+  console.log(userData)
 
 
   return (

@@ -6,10 +6,12 @@ const axios = require('axios')
 
 const SignIn = ({ userData, setUserData, isLoggedIn, setIsLoggedIn }) => {
     
-    const clientId = '996392350039-svujvj42te46nbsotn01j8pgv2p40nq3.apps.googleusercontent.com'
+    const clientId = '996392350039-hntcggummele2vi5oam219mnqu1gq8a6.apps.googleusercontent.com'
     const [showLoginButton, setShowLoginButton] = useState(true)
     const [showLogoutButton, setShowLogoutButton] = useState(false)
     const navigate = useNavigate()
+    const headers = {
+        'Content-Type': 'application/json'}
 
     const createUser = async () => {
         const userInfo = {
@@ -19,7 +21,7 @@ const SignIn = ({ userData, setUserData, isLoggedIn, setIsLoggedIn }) => {
             googleId: userData.googleId,
             profilePicturePath: userData.imageUrl,
         }
-        const result = await axios.post('/api/users/createUser', userInfo, { headers: {'Content-Type': 'application/json'}})
+        const result = await axios.post('https://denisse-app-backend.herokuapp.com/api/users/createUser', userInfo, { headers: headers})
         return result.data
     }
 

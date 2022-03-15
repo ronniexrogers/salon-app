@@ -3,8 +3,8 @@ const router = express.Router()
 const User = require('../models/User')
 
 router.post('/createUser', async (req, res) => {
-    console.log(req.body)
-    const userData = {
+    try {
+      const userData = {
       firstName: req.body.firstName,
       lastName: req.body.lastName,
       email: req.body.email,
@@ -12,6 +12,9 @@ router.post('/createUser', async (req, res) => {
       profilePicturePath: req.body.profilePicturePath,
     }
     await new User(userData).save()
+  }   catch(error) {
+    console.error(error)
+  }
   })
 
 router.get('/:id', async (req, res, next) => {

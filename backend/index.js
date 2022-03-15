@@ -1,9 +1,9 @@
 //Basic Config
-require('dotenv').config()
 const express = require('express')
 const axios = require('axios')
 require('./db/connection')
 const app = express()
+require('dotenv').config()
 
 const fs = require('fs')
 const util = require('util')
@@ -17,7 +17,7 @@ const imageRouter = require('./routes/ImageRouter')
 const cors = require('cors')
 app.use(cors())
 
-
+app.set('port', process.env.PORT )
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
@@ -41,6 +41,8 @@ app.get('/', (req, res) => {
 
   
 //Start Server
-app.listen(process.env.PORT || 5001, () => {
-    console.log(`✅ PORT: ${app.get('port')} 🌟`)
+app.listen(app.get('port'), () => {
+	console.log(`✅ PORT: ${app.get('port')} 🌟`)
 })
+
+// https://aqueous-tor-70504.herokuapp.com/      https://git.heroku.com/aqueous-tor-70504.git
