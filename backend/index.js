@@ -18,7 +18,7 @@ const cors = require('cors')
 app.use(cors({origin: "*"}))
 
 
-app.set('port', process.env.PORT )
+app.set('port', process.env.PORT || 5000 )
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
