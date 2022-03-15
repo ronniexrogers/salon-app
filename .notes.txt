@@ -6,6 +6,7 @@ Steps taken front end:
 -npm install react-datetime-picker
 -npm i --save react-google-button
 -npm i --save react-google-recaptcha
+-npm install http-proxy-middleware --save
 
 
 
