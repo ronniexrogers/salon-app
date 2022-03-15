@@ -1,6 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import './appComponents/CSS/App.css'
-import Nav from './appComponents/Nav'
 import Home from './appComponents/Home'
 import SignIn from './appComponents/SignIn'
 import Gallery from './appComponents/Gallery'
@@ -10,6 +9,7 @@ import Contact from './appComponents/Contact'
 import MyProfile from './appComponents/MyProfile'
 import Footer from './appComponents/Footer'
 import { useEffect, useState } from 'react'
+import NavBar from './appComponents/Nav'
 const axios = require('axios')
 
 
@@ -26,13 +26,11 @@ const App = () => {
     })
   }, [userData])
   console.log(dataFromDB)
-  console.log(userData)
-
 
   return (
     <div className="App">
       <Router>
-        <Nav userData={ userData } setIsLoggedIn={ setIsLoggedIn } isLoggedIn={isLoggedIn} />
+        <NavBar userData={ userData } setIsLoggedIn={ setIsLoggedIn } isLoggedIn={isLoggedIn} />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/signin" element={<SignIn setUserData={ setUserData } userData={ userData } setIsLoggedIn={ setIsLoggedIn } isLoggedIn={isLoggedIn} />} />
@@ -42,6 +40,7 @@ const App = () => {
           <Route path="/contact" element={<Contact />} />
           <Route path="/myProfile" element={<MyProfile dataFromDB={ dataFromDB } />} />
         </Routes>
+        <Footer />
       </Router>
     </div>
   )

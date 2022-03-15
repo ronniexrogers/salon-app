@@ -4,6 +4,7 @@ const mongoose = require('../db/connection')
 const AppointmentSchema = new mongoose.Schema({
 	name: String,
     date: String,
+    time: String,
 	number: String,
     description: String,
     imagePath: String

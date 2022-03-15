@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import Footer from './Footer'
+import { FormGroup, Label, Input } from "reactstrap"
 
 const axios = require('axios')
 
@@ -14,7 +14,6 @@ const MyProfile = ({ dataFromDB }) => {
     const [futureAppointments, setFutureAppointments] = useState([])
     const todaysDate = new Date().valueOf()
 
-
     const handleDeleteOne = (id) => {
         axios.delete(`http://localhost:8080/api/appointments/${id}`)
     }
@@ -24,7 +23,7 @@ const MyProfile = ({ dataFromDB }) => {
         .then ((res) => {
             setAppointments(res.data)
         })
-    }, [])
+    }, [appointments])
 
     const postImage = async ({image, description}) => {
         const formData = new FormData()
@@ -46,6 +45,12 @@ const MyProfile = ({ dataFromDB }) => {
         const file = e.target.files[0]
             setFile(file)
         }
+    
+    useEffect(() => {
+            const inputValue = document.getElementById("select").value
+            setType(inputValue)
+    }, [])
+
 
     useEffect(() => {
         setFutureAppointments(appointments.filter(appointment => Date.parse(appointment.date) > todaysDate))
@@ -64,14 +69,42 @@ const MyProfile = ({ dataFromDB }) => {
                     <h2>Upload to Gallery</h2>
                     <form id="admin-upload" onSubmit={submit}>
                     <h4>Description of service</h4>
-                    <input required={true} className="input-text" placeholder='Description of photo' onChange={e => setDescription(e.target.value)} type="text"></input>
+                    <FormGroup>
+                        <Input 
+                        name="description"
+                        className="Input-text" 
+                        placeholder='Description of Service' 
+                        onChange={e => setDescription(e.target.value)}
+                        type="text">
+                        </Input>
+                    </FormGroup>
                     <h4>Type of service</h4>
-                    <select required={true}>
-                        <option value="hair">Hair</option>
-                        <option value="nails">Nails</option>
-                    </select>
+                    <FormGroup>
+                        <Input
+                        id="select"
+                        name="select"
+                        type="select"
+                        onChange={e => setType(e.target.value)}
+                        >
+                        <option value={"hair"}>
+                            Hair
+                        </option>
+                        <option value={"nails"}>
+                            Nails
+                        </option>
+                        </Input>
+                    </FormGroup>
+
                     <h4>Select image</h4>
-                    <input required={true} id="salon-image-input" onChange={fileSelected} type="file" accept="image/*"></input>
+                    <FormGroup>
+                        <Input 
+                        id="salon-image-input" 
+                        onChange={fileSelected} 
+                        type="file" 
+                        accept="image/*">
+                        </Input>
+                    </FormGroup>
+
                     <button type="submit">Submit</button>
                     </form>
                 </div>
@@ -85,6 +118,7 @@ const MyProfile = ({ dataFromDB }) => {
                     <div key={appointment._id} className="single-appointment-div">
                         <ul>
                         <li>{appointment.date}</li>
+                        <li>{appointment.time}</li>
                         <li>{appointment.name}</li>
                         <li>{appointment.number}</li>
                         <li>{appointment.description}</li>
@@ -115,7 +149,6 @@ const MyProfile = ({ dataFromDB }) => {
                 </div>
                     
                 </div>
-            <Footer />
             </div>
         )
     }
@@ -124,7 +157,6 @@ const MyProfile = ({ dataFromDB }) => {
         <div className="my-profile">
             Hello, {dataFromDB.firstName}!
             <img className="profile-picture" src={dataFromDB.profilePicturePath} alt="profile" />
-            <Footer />
         </div>
      )
 }

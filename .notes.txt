@@ -7,7 +7,8 @@ Steps taken front end:
 -npm i --save react-google-button
 -npm i --save react-google-recaptcha
 -npm install http-proxy-middleware --save
-
+-npm install reactstrap react react-dom
+-npm install --save bootstrap
 
 
 Steps taken back end:

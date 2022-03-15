@@ -1,7 +1,8 @@
 import { useRef, useState } from "react"
 import ReCAPTCHA from "react-google-recaptcha"
 import { useNavigate } from "react-router-dom"
-import Footer from "./Footer"
+import { FormGroup, Input } from "reactstrap"
+
 const axios = require('axios')
 
 const Contact = () => {
@@ -52,10 +53,42 @@ const Contact = () => {
         <div className="contact-form">
             <h1 className="contact-form-header">Contact Me</h1>
             <form onSubmit={ handleSubmit }>
-                <input type="text" required={true} name="name" placeholder="Name" onChange={(e) => setName(e.target.value)}></input>
-                <input type="text" required={true} name="email" placeholder="Email" onChange={(e) => setEmail(e.target.value)}></input>
-                <input type="text" required={true} name="number" placeholder="Number" onChange={(e) => setNumber(e.target.value)}></input>
-                <input type="text" required={true} name="message" placeholder="Message" onChange={(e) => setMessage(e.target.value)}></input>
+                <FormGroup>
+                <Input 
+                  id="name" 
+                  name="name"
+                  placeholder='Name' 
+                  onChange={(e) => setName(e.target.value)}
+                  type="text" >
+                </Input>
+                </FormGroup>
+                <FormGroup>
+                  <Input
+                    id="exampleEmail"
+                    name="email"
+                    placeholder="E-Mail"
+                    type="email"
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
+                </FormGroup>
+                <FormGroup>
+                <Input 
+                  name="number"
+                  className="Input-text" 
+                  placeholder='Phone Number' 
+                  onChange={(e) => setNumber(e.target.value)}
+                  type="text">
+                </Input>
+                </FormGroup>
+                <FormGroup>
+                <Input 
+                  name="message"
+                  className="Input-text" 
+                  placeholder='Enter your message here!' 
+                  onChange={(e) => setMessage(e.target.value)}
+                  type="text">
+                </Input>
+                </FormGroup>
                 <ReCAPTCHA 
                 ref={recaptchaRef}
                 sitekey={recaptchaKey}
@@ -67,7 +100,6 @@ const Contact = () => {
                 Thanks for contacting me! I'll be in touch soon.
                 <button onClick={() => handleCloseModal()}>Close</button>
             </div>
-            <Footer />
         </div>
      )
 }

@@ -1,10 +1,12 @@
+import React from 'react'
 import { Link } from "react-router-dom"
 import { GoogleLogin, GoogleLogout } from 'react-google-login'
 import { useState } from "react"
 import GoogleButton from 'react-google-button'
 import { useNavigate } from "react-router-dom"
+import { Nav, NavItem } from "reactstrap"
 
-const Nav = ({ userData, setIsLoggedIn, isLoggedIn }) => {
+const NavBar = ({ userData, setIsLoggedIn, isLoggedIn }) => {
     const [showLogoutButton, setShowLogoutButton] = useState(false)
     const clientId = '996392350039-9plg5206hu16pii68bk6akvkr1b47gg2.apps.googleusercontent.com'
     const navigate = useNavigate()
@@ -24,25 +26,26 @@ const Nav = ({ userData, setIsLoggedIn, isLoggedIn }) => {
     if(isLoggedIn){
         return ( 
             <div className="nav">
-                <nav>
-                    Hi, {userData.name}! 
-                    <Link to="/"> Home </Link> |
-                    <Link to="/appointment"> Book an Appointment </Link> |
-                    <Link to="/gallery"> Gallery </Link> |
-                    <Link to="/about"> About </Link> |
-                    <Link to="/contact"> Contact Me </Link> |
-                    <Link to="/myProfile"> My Profile</Link> |
-                    {isLoggedIn ? 
-                    <GoogleLogout
-                        clientId={clientId}
-                        buttonText="Sign Out"
-                        onLogoutSuccess={onLogoutSuccess}
-                        SameSite="None"
-                        render={renderProps => (
-                            <Link to="/" label='Sign Out' onClick={renderProps.onClick} disabled={renderProps.disabled}> Sign Out</Link>
-                          )}
-                    /> : null}
-                </nav>
+                <Nav fill justified tabs>
+                    <NavItem>
+                    <Link to="/"> Home </Link>
+                    </NavItem>
+                    <NavItem>
+                    <Link to="/appointment"> Book an Appointment </Link>
+                    </NavItem>
+                    <NavItem>
+                    <Link to="/gallery"> Gallery </Link>
+                    </NavItem>
+                    <NavItem>
+                    <Link to="/about"> About </Link>
+                    </NavItem>
+                    <NavItem>
+                    <Link to="/contact"> Contact Me </Link>
+                    </NavItem>
+                    <NavItem>
+                    <Link to="/myProfile"> My Profile</Link>
+                    </NavItem>
+                </Nav>
                 <div className="loggedout-modal">
                     Succesfully logged out!
                     <button onClick={() => handleCloseModal()}>Close</button>
@@ -52,15 +55,25 @@ const Nav = ({ userData, setIsLoggedIn, isLoggedIn }) => {
     }
     return ( 
         <div className="nav">
-            <nav>
-                <Link to="/">Home </Link> |
-                <Link to="/appointment"> Book an Appointment </Link> |
-                <Link to="/gallery"> Gallery </Link> |
-                <Link to="/about"> About </Link> |
+             <Nav fill justified pills tabs>
+                <NavItem>
+                <Link to="/"> Home </Link>
+                </NavItem>
+                <NavItem>
+                <Link to="/appointment"> Book an Appointment </Link>
+                </NavItem>
+                <NavItem>
+                <Link to="/gallery"> Gallery </Link>
+                </NavItem>
+                <NavItem>
+                <Link to="/about"> About </Link>
+                </NavItem>
+                <NavItem>
                 <Link to="/contact"> Contact Me </Link>
-            </nav>
+                </NavItem>
+            </Nav>
         </div>
      )
 }
  
-export default Nav
+export default NavBar

@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react"
-import Footer from "./Footer"
 const axios = require('axios')
 
 const Gallery = () => {
@@ -48,7 +47,6 @@ const Gallery = () => {
                     ))
                 }
             </div>
-            <Footer />
         </div>
      )
 }
