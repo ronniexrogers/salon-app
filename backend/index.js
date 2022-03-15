@@ -14,13 +14,13 @@ const userRouter = require('./routes/UserRouter')
 const imageRouter = require('./routes/ImageRouter')
 const path = require('path')
 
-const cors = require('cors')
-app.use(cors({origin: "https://ronnie-rogers-capstone.herokuapp.com/"}))
 
-
-app.set('port', process.env.PORT || 5000 )
+app.set('port', process.env.PORT)
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
+
+const cors = require('cors')
+app.use(cors({origin: "https://ronnie-rogers-capstone.herokuapp.com/"}))
 
 app.use((req, res, next) => {
   res.append('Access-Control-Allow-Origin', ['*']);

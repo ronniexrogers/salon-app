@@ -9,7 +9,7 @@ const Gallery = () => {
     const [allPhotos, setAllPhotos] = useState([])
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/api/salonPhotos`)
+        axios.get(`http://localhost:8080/api/salonPhotos`)
         .then ((res) => {
             setAllPhotos(res.data)
         })
