@@ -26,8 +26,7 @@ const AppointmentCreate = ({ userData }) => {
       try {
         const result = await axios.post('http://localhost:8080/api/appointments/createAppointment', formData, { 
           headers: {
-          'Content-Type': 'multipart/form-data',
-          'Access-Control-Allow-Origin': '*'}})
+          'Content-Type': 'multipart/form-data'}})
         return result.data 
       } catch(err) {
         alert(err)

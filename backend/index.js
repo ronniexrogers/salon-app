@@ -20,18 +20,11 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
 const cors = require('cors')
-app.use(cors({origin: "https://ronnie-rogers-capstone.herokuapp.com/"}))
+app.use(cors({origin: "*"}))
 
-app.use((req, res, next) => {
-  res.append('Access-Control-Allow-Origin', ['*']);
-  res.append('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
-  res.append('Access-Control-Allow-Headers', 'Content-Type');
-  next();
-});
-
-app.use(express.static(path.join(__dirname, '../build/index.html')))
-app.get('/*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../build/index.html'))
+app.use(express.static(path.join(__dirname, '../public')))
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../public'))
 })
 
 app.use((err, req, res, next) => {

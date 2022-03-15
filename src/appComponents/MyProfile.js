@@ -33,8 +33,7 @@ const MyProfile = ({ dataFromDB }) => {
         formData.append("type", type)
         const result = await axios.post('http://localhost:8080/api/salonPhotos', formData, { 
             headers: {
-                'Content-Type': 'multipart/form-data',
-                'Access-Control-Allow-Origin': '*'}})
+                'Content-Type': 'multipart/form-data'}})
         return result.data
       }
 

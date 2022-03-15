@@ -6,13 +6,12 @@ const axios = require('axios')
 
 const SignIn = ({ userData, setUserData, isLoggedIn, setIsLoggedIn }) => {
     
-    const clientId = '996392350039-1hrmc879j2qiq6mavsvgopm5bqjvlvfm.apps.googleusercontent.com'
+    const clientId = '996392350039-sp2pn0k7kj6iopo5knck8f39sm9fhp03.apps.googleusercontent.com'
     const [showLoginButton, setShowLoginButton] = useState(true)
     const [showLogoutButton, setShowLogoutButton] = useState(false)
     const navigate = useNavigate()
     const headers = {
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*'}
+        'Content-Type': 'application/json'}
 
     const createUser = async () => {
         try {

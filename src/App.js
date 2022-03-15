@@ -18,13 +18,9 @@ const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [userData, setUserData] = useState({})
   const [dataFromDB, setDataFromDB] = useState(null)
-  const headers = {
-    "Access-Control-Allow-Origin": "http://localhost:8080/",
-    'Access-Control-Allow-Origin': '*'
-  }
 
   useEffect(() => {
-    axios.get(`http://localhost:8080/api/users/${userData.googleId}`, {headers: headers})
+    axios.get(`http://localhost:8080/api/users/${userData.googleId}`)
     .then ((res) => {
       setDataFromDB(res.data[0])
     })
