@@ -15,7 +15,7 @@ const imageRouter = require('./routes/ImageRouter')
 const path = require('path')
 
 const cors = require('cors')
-app.use(cors({origin: "*"}))
+app.use(cors({origin: "https://ronnie-rogers-capstone.herokuapp.com/"}))
 
 
 app.set('port', process.env.PORT || 5000 )
