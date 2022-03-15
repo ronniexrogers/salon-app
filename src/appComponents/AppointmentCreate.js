@@ -24,7 +24,7 @@ const AppointmentCreate = ({ userData }) => {
       formData.append("number", number)
       formData.append("date", appointmentDate)
       try {
-        const result = await axios.post('https://denisse-app-backend.herokuapp.com/api/appointments/createAppointment', formData, { 
+        const result = await axios.post('http://localhost:5000/api/appointments/createAppointment', formData, { 
           headers: {
           'Content-Type': 'multipart/form-data',
           'Access-Control-Allow-Origin': '*'}})

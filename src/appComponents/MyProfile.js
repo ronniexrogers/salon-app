@@ -16,11 +16,11 @@ const MyProfile = ({ dataFromDB }) => {
 
 
     const handleDeleteOne = (id) => {
-        axios.delete(`https://denisse-app-backend.herokuapp.com/api/appointments/${id}`)
+        axios.delete(`http://localhost:5000/api/appointments/${id}`)
     }
 
     useEffect(() => {
-        axios.get(`https://denisse-app-backend.herokuapp.com/api/appointments`)
+        axios.get(`http://localhost:5000/api/appointments`)
         .then ((res) => {
             setAppointments(res.data)
         })
@@ -31,7 +31,7 @@ const MyProfile = ({ dataFromDB }) => {
         formData.append("image", image)
         formData.append("description", description)
         formData.append("type", type)
-        const result = await axios.post('https://denisse-app-backend.herokuapp.com/api/salonPhotos', formData, { 
+        const result = await axios.post('http://localhost:5000/api/salonPhotos', formData, { 
             headers: {
                 'Content-Type': 'multipart/form-data',
                 'Access-Control-Allow-Origin': '*'}})

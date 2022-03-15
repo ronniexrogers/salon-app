@@ -22,7 +22,7 @@ const res = require('express/lib/response')
         })
         return res.data
     }catch(err) {
-        log.error(errpr, 'failed to fetch google 0auth tokens')
+        console.error(err, 'failed to fetch google 0auth tokens')
     }
 }
 
