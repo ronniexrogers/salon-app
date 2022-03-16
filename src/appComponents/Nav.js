@@ -65,7 +65,7 @@ const Navigation = ({ userData, setIsLoggedIn, isLoggedIn }) => {
     }
     return ( 
         <div className="nav">
-             <Navbar color="success" expand="md" light>
+            <Navbar className='nav-bar' color="success" expand="md" >
                 <NavItem>
                 <Link className="navlink" to="/"> Home </Link>
                 </NavItem>

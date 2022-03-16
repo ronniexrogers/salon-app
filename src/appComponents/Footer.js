@@ -6,7 +6,7 @@ const Footer = () => {
 <div className="footer">
   <Card>
     <CardFooter className="text-muted">
-      Website designed and created from scratch by Ronnie Rogers. <a target="_blank" rel="noopener noreferrer" href="https://github.com/ronniexrogers/salon-app">Github Repo</a>
+      Website designed and coded by Ronnie Rogers. <a target="_blank" rel="noopener noreferrer" href="https://github.com/ronniexrogers/salon-app">Github Repo</a>
     </CardFooter>
   </Card>
 </div>

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { UncontrolledCarousel } from "reactstrap"
+import { UncontrolledCarousel, Col, CardTitle, CardText, Button, Card, Row } from "reactstrap"
 
 const axios = require('axios')
 
@@ -32,28 +32,34 @@ const Gallery = () => {
 
     return ( 
         <div className="gallery">
-            <h1>Gallery</h1>
-            <div className="hair-gallery">
-                <h3>Hair</h3>
+
+            <Row>
+            <Col sm="6">
+                <h1>Hair</h1>
                 {
-                    hairPhotos.map(photo => (
-                        <img key={photo._id} src={photo.imagePath} alt={photo.description} />
-                    ))
+                hairPhotos.map(photo => (
+                <Card body>
+                <CardText>
+                <img key={photo._id} src={photo.imagePath} alt={photo.description} />
+                </CardText>
+                </Card>
+                ))
                 }
-            </div>
-            
 
-            <div className="nail-gallery">
-                <h3>Nails</h3>
+            </Col>
+            <Col sm="6">
+                <h1>Nails</h1>
                 {
-                    nailPhotos.map(photo => (
-                        <img key={photo._id} src={photo.imagePath} alt={photo.description} />
-                    ))
+                nailPhotos.map(photo => (
+                <Card body>
+                <CardText>
+                <img key={photo._id} src={photo.imagePath} alt={photo.description} />
+                </CardText>
+                </Card>
+                ))
                 }
-            </div>
-
-
-
+                </Col>
+            </Row>
         </div>
      )
 }

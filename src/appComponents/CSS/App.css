@@ -1,9 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Poiret+One&display=swap');
+
 .App {
   text-align: center;
+  background-color: rgba(247, 237, 225, 0.479);
+
 }
 
 .home {
-  background-color: rgba(247, 237, 225, 0.479);
+  background-color: rgba(255, 255, 255, 0.479);
   height: 100vh;
   width: 100vw;
 }
@@ -24,6 +28,11 @@
   background-color: rgba(247, 237, 225, 0.479);
   height: 100vh;
   width: 100vw;
+  overflow: auto;
+  font-family: 'Lobster';
+  color: pink;
+  -webkit-text-stroke: black .5px;
+  margin: 10px auto;
 }
 
 .contact {
@@ -35,7 +44,7 @@
 .about {
   background-color: rgb(255, 240, 242);
   width: 60%;
-  height: 160px;
+  height: 13vh;
   padding: 10px 10px 10px 10px;
   margin: 10px auto;
   border: solid rgba(0, 0, 0, 0.089) 1px;
@@ -147,4 +156,19 @@ img {
   color: rgb(255, 255, 255);
   text-decoration: none;
   user-select: none;
+}
+
+.homepage-carousel {
+  margin: 20px 0px 20px 0px
+}
+
+.welcome-div{
+  font-family: 'Lobster';
+  color: rgb(245, 91, 142);
+  -webkit-text-stroke: black .5px;
+  letter-spacing: 1px;
+  font-size: 72px;
+  background: -webkit-linear-gradient(rgb(250, 245, 245), rgb(245, 91, 142));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
