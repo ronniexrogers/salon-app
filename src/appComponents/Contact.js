@@ -25,6 +25,7 @@ const Contact = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
         await postSubmission()
+        modal.style.display = "block"
     }
 
     const postSubmission = async () => {
@@ -96,11 +97,11 @@ const Contact = () => {
                 sitekey={recaptchaKey}
                 onChange={updateRecaptchaToken}
                 />
-                  <Button block color="success" size="lg" onClick={() => handleToggleModal()} type="submit">Submit</Button>
+                  <Button block color="success" size="lg" type="submit">Submit</Button>
             </form>
             <div className="contact-modal">
                 Thanks for contacting me! I'll be in touch soon.
-                  <Button block color="success" size="lg" onClick={() => navigate('/')}>Close</Button>
+                  <Button block color="success" size="sm" onClick={() => navigate('/')}>Close</Button>
             </div>
 
         </div>
