@@ -27,7 +27,6 @@ router.post('/createAppointment', upload.single('image'), async (req, res, next)
     console.log(file)
     const result = await uploadFile(file)
     unlinkFile(file.path)
-    const description = req.body.description
     const appointmentData = {
       imagePath: result.Location,
       description: req.body.description,

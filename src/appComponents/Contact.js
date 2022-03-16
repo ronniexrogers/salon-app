@@ -52,8 +52,8 @@ const Contact = () => {
 
     return ( 
         <div className="contact">
+        <h1 className="contact-form-header">Contact Me</h1>
         <div className="contact-form">
-            <h1 className="contact-form-header">Contact Me</h1>
             <form onSubmit={ handleSubmit }>
                 <FormGroup>
                 <Input 

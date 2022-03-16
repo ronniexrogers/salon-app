@@ -14,6 +14,7 @@ const MyProfile = ({ dataFromDB }) => {
     const [futureAppointments, setFutureAppointments] = useState([])
     const todaysDate = new Date().valueOf()
 
+
     const handleDeleteOne = (id) => {
         axios.delete(`http://localhost:8080/api/appointments/${id}`)
     }

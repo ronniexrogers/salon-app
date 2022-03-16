@@ -16,7 +16,6 @@ const AppointmentCreate = ({ userData }) => {
     const [appointmentDate, setAppointmentDate] = useState('')
     const [email, setEmail] = useState('')
     const [appointmentTime, setAppointmentTime] = useState('')
-    const [modalShowing, setModalShowing] = useState(false)
     const modal = document.querySelector('.appointment-modal')
     const navigate = useNavigate()
 
@@ -43,7 +42,6 @@ const AppointmentCreate = ({ userData }) => {
       e.preventDefault()
       const result = await postImage({image: file, description, clientName, number, appointmentDate, appointmentTime, email})
       setImages([result, ...images])
-      handleToggleModal()
     }
     const fileSelected = (e) => {
       const file = e.target.files[0]
@@ -66,16 +64,10 @@ const AppointmentCreate = ({ userData }) => {
       : console.log("error")
     }
 
-    const handleToggleModal = () => {
-      if(modal.style.display === 'none') {
-        modal.style.display = "block"
-      } else{modal.style.display = "none"}
-    }
-
-
     return ( 
+      <div className='appointment'>
+      <h1>Book Appointment</h1>
         <div className='appointment-form'>
-            <h1>Book Appointment</h1>
             <form id="clientUpload" onSubmit={submit}>
                 <FormGroup>
                   <Input
@@ -113,7 +105,7 @@ const AppointmentCreate = ({ userData }) => {
                     id="exampleEmail"
                     name="email"
                     placeholder="E-Mail"
-                    type="email"
+                    type="text"
                     onChange={e => handleChange(e)} 
                   />
                 </FormGroup>
@@ -146,16 +138,18 @@ const AppointmentCreate = ({ userData }) => {
                   accept="image/*">
                 </Input>
                 </FormGroup>
-                <Button type="submit" block color="success" size="lg" onClick={() => handleToggleModal()}>
+                <Button type="submit" block color="success" size="lg" onClick={() => modal.style.display = "block"}>
                   Submit
                 </Button>
             </form>
 
-
           <div className="appointment-modal">
+            <div className="modal-text">
             Thanks for booking with me! I'll be in touch soon to confirm your appointment.
+            </div>
             <button onClick={() => navigate('/')}>Close</button>
           </div>
+      </div>
       </div>
      )
 }

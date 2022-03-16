@@ -13,7 +13,7 @@ const Appointment = ({ userData, isLoggedIn }) => {
 
      return (
          <div>
-             You need to <Link to="/signin">sign in</Link> first!
+             <h5>You need to <Link to="/signin">sign in</Link> first!</h5>
          </div>
      )
 }

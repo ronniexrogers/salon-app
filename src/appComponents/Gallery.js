@@ -37,8 +37,8 @@ const Gallery = () => {
             <Col sm="6">
                 <h1>Hair</h1>
                 {
-                hairPhotos.map(photo => (
-                <Card body>
+                hairPhotos.map((photo, index) => (
+                <Card key={index} body>
                 <CardText>
                 <img key={photo._id} src={photo.imagePath} alt={photo.description} />
                 </CardText>
@@ -50,8 +50,8 @@ const Gallery = () => {
             <Col sm="6">
                 <h1>Nails</h1>
                 {
-                nailPhotos.map(photo => (
-                <Card body>
+                nailPhotos.map((photo, index) => (
+                <Card key={index} body>
                 <CardText>
                 <img key={photo._id} src={photo.imagePath} alt={photo.description} />
                 </CardText>

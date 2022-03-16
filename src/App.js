@@ -25,7 +25,6 @@ const App = () => {
       setDataFromDB(res.data[0])
     })
   }, [userData])
-  console.log(dataFromDB)
 
   return (
     <div className="App">

@@ -10,7 +10,9 @@ const Home = () => {
         <div className="home">
             <div className="welcome-div">
             <p>Welcome!</p>
+            <div className="welcome-div-message">
             <h3>The official website for world renowned hair stylist & nail tech Denisse Morales.</h3>
+            </div>
             </div>
 
             <UncontrolledCarousel className="homepage-carousel"
@@ -36,8 +38,8 @@ const Home = () => {
             ]}
             />
 
-            <h5>Want to book an appointment?</h5>
-            <Button onClick={() => navigate('/')} >Book now</Button>
+            <h2>Want to book an appointment?</h2>
+            <Button className="home-button" onClick={() => navigate('/appointment')} >Book now</Button>
         </div>
      )
 }

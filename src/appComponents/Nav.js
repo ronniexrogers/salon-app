@@ -26,7 +26,7 @@ const Navigation = ({ userData, setIsLoggedIn, isLoggedIn }) => {
     if(isLoggedIn){
         return ( 
             <div className="nav">
-                <Navbar className='nav-bar' color="success" expand="md" >
+                <Navbar className='nav-bar' expand="md" >
                     <NavItem>
                     <Link className="navlink" to="/"> Home </Link>
                     </NavItem>
@@ -65,7 +65,7 @@ const Navigation = ({ userData, setIsLoggedIn, isLoggedIn }) => {
     }
     return ( 
         <div className="nav">
-            <Navbar className='nav-bar' color="success" expand="md" >
+            <Navbar className='nav-bar' expand="md" >
                 <NavItem>
                 <Link className="navlink" to="/"> Home </Link>
                 </NavItem>
