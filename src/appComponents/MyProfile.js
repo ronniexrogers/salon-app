@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { FormGroup, Label, Input } from "reactstrap"
+import { FormGroup, Input, ListGroup, ListGroupItem, Button } from "reactstrap"
 
 const axios = require('axios')
 
@@ -105,7 +105,7 @@ const MyProfile = ({ dataFromDB }) => {
                         </Input>
                     </FormGroup>
 
-                    <button type="submit">Submit</button>
+                    <Button block color="success" size="sm" type="submit">Submit</Button>
                     </form>
                 </div>
                 <div className="all-appointments-div">
@@ -116,15 +116,16 @@ const MyProfile = ({ dataFromDB }) => {
                 return Date.parse(a.date) - Date.parse(b.date)
                 }).map(appointment => (
                     <div key={appointment._id} className="single-appointment-div">
-                        <ul>
-                        <li>{appointment.date}</li>
-                        <li>{appointment.time}</li>
-                        <li>{appointment.name}</li>
-                        <li>{appointment.number}</li>
-                        <li>{appointment.description}</li>
-                        <img src={appointment.imagePath} alt="appointment inspiration" />
-                        <button onClick={() => handleDeleteOne(appointment._id)}>Delete Appointment</button>
-                        </ul>
+                        <ListGroup>
+                       <ListGroupItem color="success">Date: {appointment.date}</ListGroupItem>
+                        <ListGroupItem>Time: {appointment.time}</ListGroupItem>
+                        <ListGroupItem>Client Name: {appointment.name}</ListGroupItem> 
+                        <ListGroupItem>Client Phone Number: {appointment.number}</ListGroupItem>
+                        <ListGroupItem>Client E-Mail: {appointment.email}</ListGroupItem>
+                        <ListGroupItem>Description: {appointment.description}</ListGroupItem>
+                        <ListGroupItem><img src={appointment.imagePath} alt="appointment inspiration" /></ListGroupItem>
+                        <ListGroupItem>  <Button color="danger" size="sm" onClick={() => handleDeleteOne(appointment._id)}>Delete Appointment</Button></ListGroupItem>
+                        </ListGroup>
                     </div>
 
                 )) : <p>No upcoming appointments!</p>}
@@ -135,14 +136,16 @@ const MyProfile = ({ dataFromDB }) => {
                 return  Date.parse(b.date) - Date.parse(a.date)
                 }).map(appointment => (
                     <div key={appointment._id} className="single-appointment-div">
-                        <ul>
-                        <li>{appointment.date}</li>
-                        <li>{appointment.name}</li>
-                        <li>{appointment.number}</li>
-                        <li>{appointment.description}</li>
-                        <img src={appointment.imagePath} alt="appointment inspiration" />
-                        <button onClick={() => handleDeleteOne(appointment._id)}>Delete Appointment</button>
-                        </ul>
+                        <ListGroup>
+                        <ListGroupItem color="warning">Date: {appointment.date}</ListGroupItem>
+                        <ListGroupItem>Time: {appointment.time}</ListGroupItem>
+                        <ListGroupItem>Client Name: {appointment.name}</ListGroupItem> 
+                        <ListGroupItem>Client Phone Number: {appointment.number}</ListGroupItem>
+                        <ListGroupItem>Client E-Mail: {appointment.email}</ListGroupItem>
+                        <ListGroupItem>Description: {appointment.description}</ListGroupItem>
+                        <ListGroupItem><img src={appointment.imagePath} alt="appointment inspiration" /></ListGroupItem>
+                        <ListGroupItem>  <Button color="danger" size="sm" onClick={() => handleDeleteOne(appointment._id)}>Delete Appointment</Button></ListGroupItem>
+                        </ListGroup>
                     </div>
 
                 )) : <p>No past appointments!</p>}

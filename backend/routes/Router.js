@@ -34,7 +34,8 @@ router.post('/createAppointment', upload.single('image'), async (req, res, next)
       name: req.body.clientName,
       number: req.body.number,
       date: req.body.date,
-      time: req.body.time
+      time: req.body.time,
+      email: req.body.email
     }
     await new Appointment(appointmentData).save() }
     catch(error) {

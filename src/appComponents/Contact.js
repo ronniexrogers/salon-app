@@ -1,7 +1,7 @@
 import { useRef, useState } from "react"
 import ReCAPTCHA from "react-google-recaptcha"
 import { useNavigate } from "react-router-dom"
-import { FormGroup, Input } from "reactstrap"
+import { FormGroup, Input, Button } from "reactstrap"
 
 const axios = require('axios')
 
@@ -44,12 +44,14 @@ const Contact = () => {
         }
     }
 
-    const handleCloseModal = () => {
-        modal.style.display = "none"
-        navigate('/')
-      }
+    const handleToggleModal = () => {
+    if(modal.style.display === 'none') {
+        modal.style.display = "block"
+    } else{modal.style.display = "none"}
+    }
 
     return ( 
+        <div className="contact">
         <div className="contact-form">
             <h1 className="contact-form-header">Contact Me</h1>
             <form onSubmit={ handleSubmit }>
@@ -94,12 +96,14 @@ const Contact = () => {
                 sitekey={recaptchaKey}
                 onChange={updateRecaptchaToken}
                 />
-                <button type="submit">Submit</button>
+                  <Button block color="success" size="lg" onClick={() => handleToggleModal()} type="submit">Submit</Button>
             </form>
             <div className="contact-modal">
                 Thanks for contacting me! I'll be in touch soon.
-                <button onClick={() => handleCloseModal()}>Close</button>
+                  <Button block color="success" size="lg" onClick={() => navigate('/')}>Close</Button>
             </div>
+
+        </div>
         </div>
      )
 }

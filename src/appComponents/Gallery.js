@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react"
+import { UncontrolledCarousel } from "reactstrap"
+
 const axios = require('axios')
+
 
 const Gallery = () => {
 
@@ -25,8 +28,8 @@ const Gallery = () => {
     }, [allPhotos])
 
 
-    if(!allPhotos) return (<p>loading...</p>)
-    else
+    if(allPhotos === []) return (<p>loading...</p>)
+
     return ( 
         <div className="gallery">
             <h1>Gallery</h1>
@@ -38,6 +41,7 @@ const Gallery = () => {
                     ))
                 }
             </div>
+            
 
             <div className="nail-gallery">
                 <h3>Nails</h3>
@@ -47,6 +51,9 @@ const Gallery = () => {
                     ))
                 }
             </div>
+
+
+
         </div>
      )
 }

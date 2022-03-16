@@ -1,13 +1,53 @@
 .App {
   text-align: center;
-  background-color: rgb(247, 237, 225);
+}
+
+.home {
+  background-color: rgba(247, 237, 225, 0.479);
+  height: 100vh;
+  width: 100vw;
+}
+
+.about{
+  background-color: rgba(247, 237, 225, 0.479);
+  height: 100vh;
+  width: 100vw;
+}
+
+.appointment{
+  background-color: rgba(247, 237, 225, 0.479);
+  height: 100vh;
+  width: 100vw;
+}
+
+.gallery {
+  background-color: rgba(247, 237, 225, 0.479);
+  height: 100vh;
+  width: 100vw;
+}
+
+.contact {
+  background-color: rgba(247, 237, 225, 0.479);
+  height: 100vh;
+  width: 100vw;
+}
+
+.about {
+  background-color: rgb(255, 240, 242);
+  width: 60%;
+  height: 160px;
+  padding: 10px 10px 10px 10px;
+  margin: 10px auto;
+  border: solid rgba(0, 0, 0, 0.089) 1px;
+  border-radius: 2%;
+  align-content: center;
 }
 
 form {
   display: flex; 
   flex-direction: column; 
   max-width: 400px; 
-  margin: auto;
+  margin: 10px auto;
 }
 
 .imagePreview {
@@ -73,7 +113,7 @@ img {
 }
 
 .footer{
-  position: absolute;
+  position: fixed;
   bottom: 0;
   width: 100%;
   height: 2.5rem; 
@@ -83,9 +123,28 @@ img {
   width:100%
 }
 
-.appointment, .contact-form, .admin-upload-div{
-  background-color: rgba(255, 192, 203, 0.452);
+.appointment-form, .contact-form, .admin-upload-div{
+  background-color: rgb(255, 240, 242);
+  width: 60%;
+  margin: 10px auto;
+  border: solid rgba(0, 0, 0, 0.089) 1px;
+  border-radius: 2%;
+  align-content: center;
+}
+
+.single-appointment-div{
   width: 60%;
   margin: 0 auto;
   border-radius: 5%;
+  align-content: center;
+}
+
+.nav-bar {
+  width: 100%;
+}
+
+.navlink {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  user-select: none;
 }

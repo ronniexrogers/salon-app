@@ -9,7 +9,7 @@ import Contact from './appComponents/Contact'
 import MyProfile from './appComponents/MyProfile'
 import Footer from './appComponents/Footer'
 import { useEffect, useState } from 'react'
-import NavBar from './appComponents/Nav'
+import Navigation from './appComponents/Nav'
 const axios = require('axios')
 
 
@@ -30,7 +30,7 @@ const App = () => {
   return (
     <div className="App">
       <Router>
-        <NavBar userData={ userData } setIsLoggedIn={ setIsLoggedIn } isLoggedIn={isLoggedIn} />
+        <Navigation userData={ userData } setIsLoggedIn={ setIsLoggedIn } isLoggedIn={isLoggedIn} />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/signin" element={<SignIn setUserData={ setUserData } userData={ userData } setIsLoggedIn={ setIsLoggedIn } isLoggedIn={isLoggedIn} />} />
