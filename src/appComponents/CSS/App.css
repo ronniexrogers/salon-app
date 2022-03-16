@@ -127,7 +127,6 @@ img {
   border: solid black 1px;
   border-radius: 5%;
   display: none;
-  align-content: center;
 }
 
 .loggedout-modal{
