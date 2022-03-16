@@ -28,6 +28,7 @@ const AppointmentCreate = ({ userData }) => {
       formData.append("date", appointmentDate)
       formData.append("time", appointmentTime)
       formData.append("email", email)
+      modal.style.display = "block"
       try {
         const result = await axios.post('http://localhost:8080/api/appointments/createAppointment', formData, { 
           headers: {
@@ -131,6 +132,7 @@ const AppointmentCreate = ({ userData }) => {
                 </FormGroup>
                 <FormGroup>
                 <Input 
+                  className="custom-file-input"
                   required={true}
                   id="client-image-Input" 
                   onChange={fileSelected} 
@@ -138,7 +140,7 @@ const AppointmentCreate = ({ userData }) => {
                   accept="image/*">
                 </Input>
                 </FormGroup>
-                <Button type="submit" block color="success" size="lg" onClick={() => modal.style.display = "block"}>
+                <Button type="submit" block color="success" size="lg">
                   Submit
                 </Button>
             </form>

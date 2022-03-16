@@ -3,7 +3,11 @@
 .App {
   text-align: center;
   background-color: rgba(255, 255, 255, 0.479);
-
+  user-select: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none; 
+  -ms-user-select: none; 
 }
 
 .home {
@@ -44,6 +48,7 @@
 
 .about-text{
   background-color: rgb(255, 240, 242);
+  color: rgb(33, 116, 30);
   width: 65%;
   height: 13vh;
   padding: 15px 10px 10px 10px;
@@ -177,7 +182,7 @@ img {
 }
 
 .navlink {
-  color: rgb(0, 0, 0);
+  color: rgb(33, 116, 30);
   text-decoration: none;
   user-select: none;
   font-family: 'Times New Roman', Times, serif;
@@ -220,3 +225,27 @@ h1, h2, h5{
   color: black !important;
 }
 
+.custom-file-input::-webkit-file-upload-button {
+  visibility: hidden;
+}
+.custom-file-input::before {
+  content: 'Select an inspo pic!';
+  display: inline-block;
+  background-color: rgb(240, 240, 240);
+  border: 1px solid #999;
+  border-radius: 3px;
+  padding: 5px 8px;
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+  text-shadow: 1px 1px #fff;
+  font-weight: 700;
+  font-size: 10pt;
+}
+.custom-file-input:hover::before {
+  border-color: black;
+}
+.custom-file-input:active::before {
+  background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+}
