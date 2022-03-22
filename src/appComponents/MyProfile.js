@@ -16,11 +16,11 @@ const MyProfile = ({ dataFromDB, isLoggedIn }) => {
 
 
     const handleDeleteOne = (id) => {
-        axios.delete(`http://localhost:5000/api/appointments/${id}`)
+        axios.delete(`https://ronnie-rogers-capstone-backend.herokuapp.com/api/appointments/${id}`)
     }
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/api/appointments`)
+        axios.get(`https://ronnie-rogers-capstone-backend.herokuapp.com/api/appointments`)
         .then ((res) => {
             setAppointments(res.data)
         })
@@ -31,7 +31,7 @@ const MyProfile = ({ dataFromDB, isLoggedIn }) => {
         formData.append("image", image)
         formData.append("description", description)
         formData.append("type", type)
-        const result = await axios.post('http://localhost:5000/api/salonPhotos', formData, { 
+        const result = await axios.post('https://ronnie-rogers-capstone-backend.herokuapp.com/api/salonPhotos', formData, { 
             headers: {
                 'Content-Type': 'multipart/form-data'}})
         return result.data

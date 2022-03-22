@@ -22,7 +22,7 @@ const SignIn = ({ userData, setUserData, isLoggedIn, setIsLoggedIn }) => {
             googleId: userData.googleId,
             profilePicturePath: userData.imageUrl,
         }
-        const result = await axios.post('http://localhost:5000/api/users/createUser', userInfo, { headers: headers})
+        const result = await axios.post('https://ronnie-rogers-capstone-backend.herokuapp.com/api/users/createUser', userInfo, { headers: headers})
         return result.data
     }catch(err){
         console.error(err)

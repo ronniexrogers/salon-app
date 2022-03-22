@@ -11,7 +11,7 @@ const Gallery = () => {
     const [allPhotos, setAllPhotos] = useState([])
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/api/salonPhotos`)
+        axios.get(`https://ronnie-rogers-capstone-backend.herokuapp.com/api/salonPhotos`)
         .then ((res) => {
             setAllPhotos(res.data)
         })
