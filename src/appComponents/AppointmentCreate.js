@@ -30,7 +30,7 @@ const AppointmentCreate = ({ userData }) => {
       formData.append("email", email)
       modal.style.display = "block"
       try {
-        const result = await axios.post('http://localhost:8080/api/appointments/createAppointment', formData, { 
+        const result = await axios.post('http://localhost:5000/api/appointments/createAppointment', formData, { 
           headers: {
           'Content-Type': 'multipart/form-data'}})
         return result.data 
