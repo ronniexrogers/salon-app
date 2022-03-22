@@ -11,7 +11,9 @@ const SignIn = ({ userData, setUserData, isLoggedIn, setIsLoggedIn }) => {
     const [showLogoutButton, setShowLogoutButton] = useState(false)
     const navigate = useNavigate()
     const headers = {
-        'Content-Type': 'application/json'}
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin' : '*',
+        'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS'}
 
     const createUser = async () => {
         try {
@@ -22,7 +24,7 @@ const SignIn = ({ userData, setUserData, isLoggedIn, setIsLoggedIn }) => {
             googleId: userData.googleId,
             profilePicturePath: userData.imageUrl,
         }
-        const result = await axios.post('https://ronnie-rogers-capstone-backend.herokuapp.com/api/users/createUser', userInfo)
+        const result = await axios.post('https://ronnie-rogers-capstone-backend.herokuapp.com/api/users/createUser', userInfo, { headers: headers})
         return result.data
     }catch(err){
         console.error(err)
