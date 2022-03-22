@@ -8,7 +8,7 @@ import { Nav, NavItem, Navbar } from "reactstrap"
 
 const Navigation = ({ userData, setIsLoggedIn, isLoggedIn }) => {
     const [showLogoutButton, setShowLogoutButton] = useState(false)
-    const clientId = '996392350039-9plg5206hu16pii68bk6akvkr1b47gg2.apps.googleusercontent.com'
+    const clientId = '996392350039-vkem3f69gsnoc5mjo33l1ktuhjeiglsh.apps.googleusercontent.com'
     const navigate = useNavigate()
     const modal = document.querySelector('.loggedout-modal')
 
