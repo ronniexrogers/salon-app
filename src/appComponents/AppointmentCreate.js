@@ -30,7 +30,9 @@ const AppointmentCreate = ({ userData }) => {
       formData.append("email", email)
       modal.style.display = "block"
       try {
-        const result = await axios.post('https://ronnie-rogers-capstone-backend.herokuapp.com/api/appointments/createAppointment', formData)
+        const result = await axios.post('https://ronnie-rogers-capstone-backend.herokuapp.com/api/appointments/createAppointment', formData, { 
+          headers: {
+          'Content-Type': 'multipart/form-data'}})
         return result.data 
       } catch(err) {
         alert(err)
