@@ -20,7 +20,10 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
 const cors = require('cors')
-app.use(cors({origin: "*"}))
+app.use(cors({
+    origin: "https://ronnie-rogers-capstone.herokuapp.com"
+    })
+)
 
 app.use(express.static(path.join(__dirname, '../public')))
 app.get('*', (req, res) => {
