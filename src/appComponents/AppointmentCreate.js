@@ -35,7 +35,7 @@ const AppointmentCreate = ({ userData }) => {
           'Content-Type': 'multipart/form-data'}})
         return result.data 
       } catch(err) {
-        alert(err)
+        console.log(err)
       }
     }
   
