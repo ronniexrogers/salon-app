@@ -11,9 +11,7 @@ const SignIn = ({ userData, setUserData, isLoggedIn, setIsLoggedIn }) => {
     const [showLogoutButton, setShowLogoutButton] = useState(false)
     const navigate = useNavigate()
     const headers = {
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin' : '*',
-        'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS'}
+        'Content-Type': 'application/json'}
 
     const createUser = async () => {
         try {
