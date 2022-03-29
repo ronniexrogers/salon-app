@@ -19,7 +19,7 @@ const MyProfile = ({ dataFromDB, isLoggedIn }) => {
 
     const handleDeleteOne = (id) => {
         axios.delete(`https://ronnie-rogers-capstone-backend.herokuapp.com/api/appointments/${id}`)
-        appointmentState++
+        appointmentState += 1
     }
 
     useEffect(() => {
