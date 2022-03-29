@@ -11,7 +11,7 @@ const SignIn = ({ userData, setUserData, isLoggedIn, setIsLoggedIn }) => {
     const [showLogoutButton, setShowLogoutButton] = useState(false)
     const navigate = useNavigate()
     const headers = {
-        'Content-Type': 'application/json'}
+        'Content-Type': 'application/x-www-form-urlencoded'}
 
     const createUser = async () => {
         try {

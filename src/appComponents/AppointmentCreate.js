@@ -32,7 +32,7 @@ const AppointmentCreate = ({ userData }) => {
       try {
         const result = await axios.post('https://ronnie-rogers-capstone-backend.herokuapp.com/api/appointments/createAppointment', formData, { 
           headers: {
-          'Content-Type': 'multipart/form-data'}})
+            'Content-Type': 'application/x-www-form-urlencoded'}})
         return result.data 
       } catch(err) {
         console.log(err)
