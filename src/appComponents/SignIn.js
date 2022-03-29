@@ -34,6 +34,7 @@ const SignIn = ({ userData, setUserData, isLoggedIn, setIsLoggedIn }) => {
         setShowLoginButton(false)
         setShowLogoutButton(true)
         setIsLoggedIn(true)
+        createUser()
         navigate("/appointment")
     }
 
@@ -49,7 +50,7 @@ const SignIn = ({ userData, setUserData, isLoggedIn, setIsLoggedIn }) => {
     }
 
     useEffect(() => {
-        createUser()
+        
     }, [userData])
 
     return ( 
