@@ -58,8 +58,8 @@ const MyProfile = ({ dataFromDB, isLoggedIn }) => {
         setPastAppointments(appointments.filter(appointment => Date.parse(appointment.date) < todaysDate))
     }, [appointments]) 
     
-    if(!dataFromDB) return (<p>oopsie, what're ya doin here?! You need to <Link to="/signin">sign in</Link> first!</p>)
-    if(!isLoggedIn) return (<p>oopsie, what're ya doin here?! You need to <Link to="/signin">sign in</Link> first!</p>)
+    if(dataFromDB === null) return (<p>oopsie, what're ya doin here?! You need to <Link to="/signin">sign in</Link> first!</p>)
+    if(isLoggedIn === false) return (<p>oopsie, what're ya doin here?! You need to <Link to="/signin">sign in</Link> first!</p>)
 
     else if(dataFromDB.googleId === '114694917534994982394' || '110622259906074900624') {
 
