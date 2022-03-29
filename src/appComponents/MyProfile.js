@@ -25,7 +25,7 @@ const MyProfile = ({ dataFromDB, isLoggedIn }) => {
         .then ((res) => {
             setAppointments(res.data)
         })
-    }, [])
+    }, [appointments])
 
     const postImage = async ({image, description}) => {
         modal.style.display = "block"
