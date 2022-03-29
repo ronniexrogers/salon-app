@@ -72,7 +72,9 @@ const Navigation = ({ userData, setIsLoggedIn, isLoggedIn }) => {
                         onLogoutSuccess={onLogoutSuccess}
                         SameSite="None"
                         render={renderProps => (
+                            <NavItem>
                             <Link className="navlink" to="/" label='Sign Out' onClick={renderProps.onClick} disabled={renderProps.disabled}> Sign Out</Link>
+                            </NavItem>
                           )}
                     /> : null}
                     </Nav>
