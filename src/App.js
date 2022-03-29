@@ -30,6 +30,7 @@ const App = () => {
     <div className="App">
       <Router>
         <Navigation userData={ userData } setIsLoggedIn={ setIsLoggedIn } isLoggedIn={isLoggedIn} />
+        <div className="content-wrap">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/signin" element={<SignIn setUserData={ setUserData } userData={ userData } setIsLoggedIn={ setIsLoggedIn } isLoggedIn={isLoggedIn} />} />
@@ -39,6 +40,7 @@ const App = () => {
           <Route path="/contact" element={<Contact />} />
           <Route path="/myProfile" element={<MyProfile isLoggedIn={ isLoggedIn } dataFromDB={ dataFromDB } />} />
         </Routes>
+        </div>
         <Footer />
       </Router>
     </div>

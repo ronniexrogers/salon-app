@@ -93,6 +93,7 @@ const Contact = () => {
                 </Input>
                 </FormGroup>
                 <ReCAPTCHA 
+                className="captcha"
                 ref={recaptchaRef}
                 sitekey={recaptchaKey}
                 onChange={updateRecaptchaToken}
