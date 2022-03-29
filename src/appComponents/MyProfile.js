@@ -33,7 +33,7 @@ const MyProfile = ({ dataFromDB, isLoggedIn }) => {
         formData.append("type", type)
         const result = await axios.post('https://ronnie-rogers-capstone-backend.herokuapp.com/api/salonPhotos', formData, { 
             headers: {
-                'Content-Type': 'application/x-www-form-urlencoded'}})
+                'Content-Type': 'multipart/form-data'}})
         return result.data
       }
 
