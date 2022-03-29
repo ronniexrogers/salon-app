@@ -14,10 +14,12 @@ const MyProfile = ({ dataFromDB, isLoggedIn }) => {
     const [futureAppointments, setFutureAppointments] = useState([])
     const todaysDate = new Date().valueOf()
     const modal = document.querySelector('.admin-modal')
+    let appointmentState = 0
 
 
     const handleDeleteOne = (id) => {
         axios.delete(`https://ronnie-rogers-capstone-backend.herokuapp.com/api/appointments/${id}`)
+        appointmentState++
     }
 
     useEffect(() => {
@@ -25,7 +27,7 @@ const MyProfile = ({ dataFromDB, isLoggedIn }) => {
         .then ((res) => {
             setAppointments(res.data)
         })
-    }, [appointments])
+    }, [appointmentState])
 
     const postImage = async ({image, description}) => {
         modal.style.display = "block"
