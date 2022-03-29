@@ -143,6 +143,92 @@ const AppointmentCreate = ({ userData }) => {
                   Submit
                 </Button>
             </form>
+      </div>
+
+      <div className='appointment-form-mobile'>
+            <form id="clientUpload" onSubmit={submit}>
+                <FormGroup>
+                  Select Date
+                  <Input
+                    required={true}
+                    id="exampleDate"
+                    name="date"
+                    placeholder="01/01/2022"
+                    type="date"
+                    onChange={e => handleChange(e)} 
+                  />
+                </FormGroup>
+                <FormGroup>
+                  Select Time
+                  <Input
+                    required={true}
+                    id="exampleTime"
+                    name="time"
+                    placeholder="12:00 PM"
+                    type="time"
+                    onChange={e => handleChange(e)} 
+                  />
+                </FormGroup>
+                <FormGroup>
+                  Enter Name
+                <Input 
+                  required={true}
+                  className="Input-text" 
+                  name="name"
+                  placeholder='Name' 
+                  onChange={e => handleChange(e)} 
+                  type="text">
+                </Input>
+                </FormGroup>
+                <FormGroup>
+                  Enter E-Mail
+                  <Input
+                    required={true}
+                    id="exampleEmail"
+                    name="email"
+                    placeholder="E-Mail"
+                    type="text"
+                    onChange={e => handleChange(e)} 
+                  />
+                </FormGroup>
+                <FormGroup>
+                  Enter Phone Number
+                <Input 
+                  required={true}
+                  name="number"
+                  className="Input-text" 
+                  placeholder='Phone Number' 
+                  onChange={e => handleChange(e)} 
+                  type="text">
+                </Input>
+                </FormGroup>
+                <FormGroup>
+                  Enter Service Description
+                <Input 
+                  name="description"
+                  required={true}
+                  className="Input-text" 
+                  placeholder='Description of Service' 
+                  onChange={e => handleChange(e)} 
+                  type="text">
+                </Input>
+                </FormGroup>
+                <FormGroup>
+                  Attach Inspiration Photo
+                <Input 
+                  className="custom-file-input"
+                  required={true}
+                  id="client-image-Input" 
+                  onChange={fileSelected} 
+                  type="file" 
+                  accept="image/*">
+                </Input>
+                </FormGroup>
+                <Button type="submit" block color="success" size="lg">
+                  Submit
+                </Button>
+            </form>
+      </div>
 
           <div className="appointment-modal">
             <div className="modal-text">
@@ -150,7 +236,6 @@ const AppointmentCreate = ({ userData }) => {
             </div>
             <button onClick={() => navigate('/')}>Close</button>
           </div>
-      </div>
       </div>
      )
 }

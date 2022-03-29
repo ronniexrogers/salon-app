@@ -266,6 +266,10 @@ h1, h2, h5{
   margin: 10px auto 10px;
 }
 
+.appointment-form-mobile{
+  display: none;
+}
+
 @media only screen and (max-width: 600px) {
 
   .welcome-div{
@@ -335,6 +339,14 @@ h1, h2, h5{
 
   .single-appointment-div{
     width: 90%;
+  }
+
+  .appointment-form{
+    display: none;
+  }
+
+  .appointment-form-mobile{
+    display: block;
   }
 
 }
