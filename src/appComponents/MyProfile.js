@@ -6,8 +6,8 @@ const axios = require('axios')
 
 const MyProfile = ({ dataFromDB, isLoggedIn }) => {
     const [appointments, setAppointments] = useState([])
-    const [description, setDescription] = useState(null)
-    const [type, setType] = useState(null)
+    const [description, setDescription] = useState('')
+    const [type, setType] = useState('')
     const [images, setImages] = useState([])
     const [file, setFile] = useState()
     const [pastAppointments, setPastAppointments] = useState([])
