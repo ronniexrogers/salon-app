@@ -18,12 +18,7 @@ const transporter = nodemailer.createTransport({
   }
 })
 
-const options = {
-  from: process.env.EMAIL,
-  to: "ronniexrogers@yahoo.com",
-  subject: "New appointment created!",
-  text: "Check your site! Someone created an appointment."
-}
+
 
 
 router.get('/:key', (req, res) => {
@@ -34,6 +29,13 @@ router.get('/:key', (req, res) => {
   
 router.post('/createAppointment', upload.single('image'), async (req, res, next) => {
   try {
+
+    const options = {
+      from: process.env.EMAIL,
+      to: process.env.RECEIVING_EMAIL,
+      subject: "New appointment created!",
+      text: `Check your site! ${req.body.clientName} created an appointment on ${req.body.date} at ${req.body.time}. Purrrrrr.`
+    }
 
     transporter.sendMail(options, function (err, info) {
       if(err) {
