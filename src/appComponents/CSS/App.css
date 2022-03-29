@@ -156,6 +156,21 @@ img {
   display: none;
 }
 
+.admin-modal{
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  left: 50%;
+  top: 25%; 
+  margin-left: -150px;
+  margin-top: -150px;
+  z-index: 1; 
+  background-color: rgba(240, 176, 198, 0.767);
+  border: solid black 1px;
+  border-radius: 5%;
+  display: none;
+}
+
 .footer{
   position: absolute;
   bottom: 0;

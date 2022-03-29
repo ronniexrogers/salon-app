@@ -13,6 +13,7 @@ const MyProfile = ({ dataFromDB, isLoggedIn }) => {
     const [pastAppointments, setPastAppointments] = useState([])
     const [futureAppointments, setFutureAppointments] = useState([])
     const todaysDate = new Date().valueOf()
+    const modal = document.querySelector('.admin-modal')
 
 
     const handleDeleteOne = (id) => {
@@ -41,6 +42,7 @@ const MyProfile = ({ dataFromDB, isLoggedIn }) => {
         e.preventDefault()
         const result = await postImage({image: file, description})
         setImages([result, ...images])
+        modal.style.display = "block"
       }
       const fileSelected = (e) => {
         const file = e.target.files[0]
@@ -109,6 +111,10 @@ const MyProfile = ({ dataFromDB, isLoggedIn }) => {
 
                     <Button block color="success" size="sm" type="submit">Submit</Button>
                     </form>
+                </div>
+                <div className="admin-modal">
+                    Picture added!
+                    <button onClick={modal.style.display = "none"}>Close</button>
                 </div>
                 <div className="all-appointments-div">
 
