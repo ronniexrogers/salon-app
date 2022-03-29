@@ -1,9 +1,8 @@
 import { useState } from 'react'
 import axios from 'axios'
 import './CSS/App.css'
-import DateTimePicker from 'react-datetime-picker'
 import { useNavigate } from 'react-router-dom'
-import { FormGroup, Button, Modal, ModalFooter, ModalBody, ModalHeader, Input } from "reactstrap"
+import { FormGroup, Button, Input } from "reactstrap"
 
 
 const AppointmentCreate = ({ userData }) => {
@@ -75,7 +74,7 @@ const AppointmentCreate = ({ userData }) => {
                     required={true}
                     id="exampleDate"
                     name="date"
-                    placeholder="date placeholder"
+                    placeholder="01/01/2022"
                     type="date"
                     onChange={e => handleChange(e)} 
                   />
@@ -85,7 +84,7 @@ const AppointmentCreate = ({ userData }) => {
                     required={true}
                     id="exampleTime"
                     name="time"
-                    placeholder="time placeholder"
+                    placeholder="12:00 PM"
                     type="time"
                     onChange={e => handleChange(e)} 
                   />
