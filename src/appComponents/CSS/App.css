@@ -333,4 +333,8 @@ h1, h2, h5{
     align-content: center;
   }
 
+  .single-appointment-div{
+    width: 90%;
+  }
+
 }

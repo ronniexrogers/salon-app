@@ -68,6 +68,7 @@ const Navigation = ({ userData, setIsLoggedIn, isLoggedIn }) => {
                     <GoogleLogout
                         clientId={clientId}
                         buttonText="Sign Out"
+                        className="navlink"
                         onLogoutSuccess={onLogoutSuccess}
                         SameSite="None"
                         render={renderProps => (
