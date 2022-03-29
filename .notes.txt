@@ -24,3 +24,4 @@ Steps taken back end:
 -touch procfile // web: node index.js
 node index.js
 -setup proxy server to connect front end to backend
+-npm i nodemailer
