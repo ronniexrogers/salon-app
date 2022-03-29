@@ -28,6 +28,7 @@ const MyProfile = ({ dataFromDB, isLoggedIn }) => {
     }, [])
 
     const postImage = async ({image, description}) => {
+        modal.style.display = "block"
         const formData = new FormData()
         formData.append("image", image)
         formData.append("description", description)
@@ -42,7 +43,6 @@ const MyProfile = ({ dataFromDB, isLoggedIn }) => {
         e.preventDefault()
         const result = await postImage({image: file, description})
         setImages([result, ...images])
-        modal.style.display = "block"
       }
       const fileSelected = (e) => {
         const file = e.target.files[0]
@@ -114,7 +114,7 @@ const MyProfile = ({ dataFromDB, isLoggedIn }) => {
                 </div>
                 <div className="admin-modal">
                     Picture added!
-                    <button>Close</button>
+                    <button onClick={modal.style.display = "none"}>Close</button>
                 </div>
                 <div className="all-appointments-div">
 
