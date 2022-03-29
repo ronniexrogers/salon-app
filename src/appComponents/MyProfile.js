@@ -50,7 +50,7 @@ const MyProfile = ({ dataFromDB, isLoggedIn }) => {
     useEffect(() => {
             const inputValue = document.getElementById("select").value
             setType(inputValue)
-    }, [isLoggedIn])
+    }, [dataFromDB])
 
 
     useEffect(() => {
