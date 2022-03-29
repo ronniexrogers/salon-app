@@ -6,8 +6,8 @@ const axios = require('axios')
 
 const MyProfile = ({ dataFromDB, isLoggedIn }) => {
     const [appointments, setAppointments] = useState([])
-    const [description, setDescription] = useState('')
-    const [type, setType] = useState('')
+    const [description, setDescription] = useState(null)
+    const [type, setType] = useState(null)
     const [images, setImages] = useState([])
     const [file, setFile] = useState()
     const [pastAppointments, setPastAppointments] = useState([])
@@ -46,6 +46,11 @@ const MyProfile = ({ dataFromDB, isLoggedIn }) => {
         const file = e.target.files[0]
             setFile(file)
         }
+    
+    useEffect(() => {
+            const inputValue = document.getElementById("select").value
+            setType(inputValue)
+    }, [])
 
 
     useEffect(() => {
@@ -57,9 +62,6 @@ const MyProfile = ({ dataFromDB, isLoggedIn }) => {
     if(!isLoggedIn) return (<p>oopsie, what're ya doin here?! You need to <Link to="/signin">sign in</Link> first!</p>)
 
     else if(dataFromDB.googleId === '114694917534994982394' || '110622259906074900624') {
-
-        const inputValue = document.getElementById("select").value
-        setType(inputValue)
 
         return (
             <div className="my-profile">
