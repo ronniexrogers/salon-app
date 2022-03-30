@@ -368,7 +368,8 @@ h1, h2, h5{
     width: 90vw;
     height: 50%;
     position: fixed;
-    left: 40%;
+    left: 42%;
+    justify-content: center;
   }
 
   .modal-button{
