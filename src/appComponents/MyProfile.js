@@ -114,7 +114,7 @@ const MyProfile = ({ dataFromDB, isLoggedIn }) => {
                 </div>
                 <div className="admin-modal">
                     Picture added!
-                    <button className='modal-button' onClick={() => modal.style.display = "none"}>Close</button>
+                    <Button className='modal-button' block color="success" size="sm"  onClick={() => modal.style.display = "none"}>Close</Button>
                 </div>
                 <div className="all-appointments-div">
 

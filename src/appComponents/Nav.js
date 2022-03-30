@@ -112,7 +112,7 @@ const Navigation = ({ userData, setIsLoggedIn, isLoggedIn }) => {
                 </Navbar>
                 <div className="loggedout-modal">
                     Succesfully logged out!
-                    <button className='modal-button' onClick={() => handleCloseModal()}>Close</button>
+                    <Button className='modal-button' block color="success" size="sm"  onClick={() => handleCloseModal()}>Close</Button>
                     </div>
                 </div>
             </div>
