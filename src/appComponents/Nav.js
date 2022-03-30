@@ -41,10 +41,7 @@ const Navigation = ({ userData, setIsLoggedIn, isLoggedIn }) => {
                     expand="lg"
                     navbar-default
                 >
-                    <NavbarToggler
-                    onClick={() => setExpand(!expand)}
-                    />
-                    <Collapse navbar isOpen={expand}>
+                    <Collapse navbar isOpen={true}>
                     <Nav className="me-auto" navbar>
                     <NavItem>
                     <Link className="navlink" to="/"> Home </Link>
@@ -131,10 +128,7 @@ const Navigation = ({ userData, setIsLoggedIn, isLoggedIn }) => {
                     expand="lg"
                     navbar-default
                 >
-                    <NavbarToggler
-                    onClick={() => setExpand(!expand)}
-                    />
-                    <Collapse navbar isOpen={expand}>
+                    <Collapse navbar isOpen={true}>
                     <Nav className="me-auto" navbar>
                     <NavItem>
                     <Link className="navlink" to="/"> Home </Link>

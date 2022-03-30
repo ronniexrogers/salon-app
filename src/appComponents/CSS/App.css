@@ -299,11 +299,11 @@ h1, h2, h5{
   }
 
   .mobile-nav{
-    display: flex;
-  }
-
-  .navlink{
-    margin: 40px;
+    margin: 0 auto;
+    display: block;
+    width: 100%;
+    background-color: rgba(255, 192, 203, 0.493);
+    border-radius: 20px;
   }
 
   .desktop-nav{
@@ -315,7 +315,7 @@ h1, h2, h5{
   }
 
   .navlink:hover{
-    color: pink;
+    color: rgb(255, 255, 255);
   }
 
   .about-text{
@@ -362,6 +362,11 @@ h1, h2, h5{
 
   .appointment-form-mobile{
     display: block;
+  }
+
+  .appointment-modal, .contact-modal, .admin-modal, .loggedout-modal{
+    width: 95%;
+    height: 95%;
   }
 
 }
