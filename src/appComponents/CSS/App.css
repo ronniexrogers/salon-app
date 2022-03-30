@@ -368,11 +368,12 @@ h1, h2, h5{
     width: 90vw;
     height: 50%;
     position: fixed;
-    left: 45%;
+    left: 40%;
   }
 
   .modal-button{
     position: absolute;
+    margin: 0 auto;
     bottom: 0;
   }
 
