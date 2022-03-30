@@ -7,8 +7,7 @@ import { useNavigate } from "react-router-dom"
 import { Nav, 
         NavItem, 
         Navbar, 
-        NavbarToggler, 
-        NavbarBrand, 
+        Button, 
         Collapse 
     } from "reactstrap"
 
