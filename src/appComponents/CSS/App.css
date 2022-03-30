@@ -370,12 +370,14 @@ h1, h2, h5{
     position: fixed;
     left: 42%;
     justify-content: center;
+    text-align: center;
   }
 
   .modal-button{
     position: absolute;
     margin: 0 auto;
     bottom: 0;
+    text-align: center;
   }
 
 }
