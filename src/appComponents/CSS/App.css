@@ -296,6 +296,7 @@ h1, h2, h5{
   .welcome-div-message {
     font-family: 'Times New Roman', Times, serif;
     font-style: italic;
+    color: pink;
   }
 
   .mobile-nav{
