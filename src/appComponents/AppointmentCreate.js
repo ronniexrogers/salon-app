@@ -234,7 +234,7 @@ const AppointmentCreate = ({ userData }) => {
             <div className="modal-text">
             Thanks for booking with me! I'll be in touch soon to confirm your appointment.
             </div>
-            <button onClick={() => navigate('/')}>Close</button>
+            <button className='modal-button' onClick={() => navigate('/')}>Close</button>
           </div>
       </div>
      )

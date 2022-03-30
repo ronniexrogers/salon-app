@@ -102,7 +102,7 @@ const Contact = () => {
             </form>
             <div className="contact-modal">
                 Thanks for contacting me! I'll be in touch soon.
-                  <Button block color="success" size="sm" onClick={() => navigate('/')}>Close</Button>
+                  <Button className='modal-button' block color="success" size="sm" onClick={() => navigate('/')}>Close</Button>
             </div>
 
         </div>

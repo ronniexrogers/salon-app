@@ -367,6 +367,12 @@ h1, h2, h5{
   .appointment-modal, .contact-modal, .admin-modal, .loggedout-modal{
     width: 95%;
     height: 95%;
+    margin: 0 auto;
+  }
+
+  .modal-button{
+    position: absolute;
+    bottom: 0;
   }
 
 }
