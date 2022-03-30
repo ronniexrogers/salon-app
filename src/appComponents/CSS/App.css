@@ -285,7 +285,7 @@ h1, h2, h5{
   display: none;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
 
   .welcome-div{
     font-family: 'Lobster';
