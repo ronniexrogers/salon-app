@@ -65,7 +65,7 @@ const Admin = ({ dataFromDB, isLoggedIn }) => {
             setIsAdmin(true)
         }
     console.log(isAdmin)
-    }, [])
+    }, [dataFromDB])
 
     useEffect(() => {
         setFutureAppointments(appointments.filter(appointment => Date.parse(appointment.date) > todaysDate))
