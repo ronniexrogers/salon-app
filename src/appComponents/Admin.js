@@ -14,9 +14,10 @@ const Admin = ({ dataFromDB, isLoggedIn }) => {
     const [file, setFile] = useState()
     const [pastAppointments, setPastAppointments] = useState([])
     const [futureAppointments, setFutureAppointments] = useState([])
-    const [isAdmin, setIsAdmin] = useState(false)
+    // const [isAdmin, setIsAdmin] = useState(false)
     const todaysDate = new Date().valueOf()
     const modal = document.querySelector('.admin-modal')
+    let isAdmin = false
 
     const handleDeleteOne = (id) => {
         axios.delete(`https://ronnie-rogers-capstone-backend.herokuapp.com/api/appointments/${id}`)
@@ -62,10 +63,10 @@ const Admin = ({ dataFromDB, isLoggedIn }) => {
         console.log(isAdmin)
         console.log(dataFromDB)
         if(dataFromDB.googleId === '114694917534994982394' || '110622259906074900624'){
-            setIsAdmin(true)
+            isAdmin = true
         }
     console.log(isAdmin)
-    }, [dataFromDB])
+    }, [])
 
     useEffect(() => {
         setFutureAppointments(appointments.filter(appointment => Date.parse(appointment.date) > todaysDate))
@@ -75,7 +76,7 @@ const Admin = ({ dataFromDB, isLoggedIn }) => {
         return (
 
             <>
-            { isAdmin ? 
+            { isAdmin === true ? 
             <div className="my-profile">
                 <h1>Admin Dashboard</h1>
                 <div className="admin-upload-div">
