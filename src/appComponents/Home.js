@@ -40,8 +40,8 @@ const Home = ({ isAdmin }) => {
             />
 
             <h2>Want to book an appointment?</h2>
-            <Button className="home-button" onClick={() => navigate('/appointment')} >Book now</Button>
-            <Link className="navlink" to="/admin">Admin Portal</Link>
+            <Button className="home-button" onClick={() => navigate('/appointment')}>Book now</Button>
+            <Button onClick={() => navigate('/admin')}>Admin Portal</Button>
         </div>
      )}
      return (
