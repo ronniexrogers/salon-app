@@ -6,7 +6,7 @@ const Home = ({ isAdmin }) => {
     
     const navigate = useNavigate()
 
-    if(!isAdmin){
+    if(isAdmin){
     return ( 
         <div className="home">
             <div className="welcome-div">
@@ -41,6 +41,7 @@ const Home = ({ isAdmin }) => {
 
             <h2>Want to book an appointment?</h2>
             <Button className="home-button" onClick={() => navigate('/appointment')} >Book now</Button>
+            <Link className="navlink" to="/admin">Admin Portal</Link>
         </div>
      )}
      return (
@@ -77,7 +78,6 @@ const Home = ({ isAdmin }) => {
 
         <h2>Want to book an appointment?</h2>
         <Button className="home-button" onClick={() => navigate('/appointment')} >Book now</Button>
-        <Link className="navlink" to="/admin">Admin Portal</Link>
         </div>
      )
 }
