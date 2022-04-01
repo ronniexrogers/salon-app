@@ -34,7 +34,7 @@ const App = () => {
       isAdmin = true
       console.log(isAdmin)
     }
-  }, [dataFromDB])
+  }, [])
 
   return (
     <div className="App">
