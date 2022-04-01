@@ -56,7 +56,10 @@ const Admin = ({ dataFromDB, isLoggedIn }) => {
             const inputValue = document.getElementById("select").value
             setType(inputValue)
         }
-    console.log(isAdmin)
+    }, [])
+
+    useEffect(() => {
+        console.log(isAdmin)
         if(dataFromDB.googleId === '114694917534994982394' || '110622259906074900624'){
             setIsAdmin(true)
         }
