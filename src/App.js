@@ -48,7 +48,7 @@ const App = () => {
           <Route path="/appointment" element={<Appointment userData={ userData } isLoggedIn={ isLoggedIn } />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/myProfile" element={<MyProfile isLoggedIn={ isLoggedIn } dataFromDB={ dataFromDB } />} />
+          <Route path="/myProfile" element={<MyProfile isAdmin={ isAdmin } isLoggedIn={ isLoggedIn } dataFromDB={ dataFromDB } />} />
           <Route path="/admin" element={<Admin isLoggedIn={ isLoggedIn } dataFromDB={ dataFromDB } />} />
         </Routes>
         </div>

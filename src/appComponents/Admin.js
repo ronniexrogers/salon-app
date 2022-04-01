@@ -1,11 +1,9 @@
-import axios from "axios"
 import { useEffect, useState } from "react"
-import { Link } from "react-router-dom"
 import { FormGroup, Input, ListGroup, ListGroupItem, Button } from "reactstrap"
 
 
 
-const Admin = ({ dataFromDB, isLoggedIn }) => {
+const Admin = ({ dataFromDB }) => {
 
     const [appointments, setAppointments] = useState([])
     const [description, setDescription] = useState(null)
@@ -14,9 +12,9 @@ const Admin = ({ dataFromDB, isLoggedIn }) => {
     const [file, setFile] = useState()
     const [pastAppointments, setPastAppointments] = useState([])
     const [futureAppointments, setFutureAppointments] = useState([])
-    // const [isAdmin, setIsAdmin] = useState(false)
     const todaysDate = new Date().valueOf()
     const modal = document.querySelector('.admin-modal')
+    const axios = require('axios')
     let isAdmin = false
 
     const handleDeleteOne = (id) => {
@@ -72,9 +70,6 @@ const Admin = ({ dataFromDB, isLoggedIn }) => {
     }, [appointments])
 
         return (
-
-            <>
-            {/* { isAdmin === true ?  */}
             <div className="my-profile">
                 <h1>Admin Dashboard</h1>
                 <div className="admin-upload-div">
@@ -168,11 +163,6 @@ const Admin = ({ dataFromDB, isLoggedIn }) => {
                 </div>    
             </div>
         </div>
-        {/* // : <p>get outta here!</p>
-        // } */}
-    </>
-
-
     )
 }
  
