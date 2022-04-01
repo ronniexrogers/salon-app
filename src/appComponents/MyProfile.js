@@ -61,6 +61,8 @@ const MyProfile = ({ dataFromDB, isLoggedIn }) => {
         setPastAppointments(appointments.filter(appointment => Date.parse(appointment.date) < todaysDate))
     }, [appointments])
 
+    console.log(dataFromDB)
+    
     if(!dataFromDB) return (<p>oopsie, what're ya doin here?! You need to <Link to="/signin">sign in</Link> first!</p>)
 
     else if(!isLoggedIn) return (<p>oopsie, what're ya doin here?! You need to <Link to="/signin">sign in</Link> first!</p>)
