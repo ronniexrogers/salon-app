@@ -56,7 +56,7 @@ const Admin = ({ dataFromDB, isLoggedIn }) => {
             const inputValue = document.getElementById("select").value
             setType(inputValue)
         }
-    }, [])
+    }, [dataFromDB])
 
     useEffect(() => {
         console.log(isAdmin)
