@@ -51,12 +51,12 @@ const Admin = ({ dataFromDB, isLoggedIn }) => {
             setFile(file)
         }
 
-    useEffect(() => {
-        if(dataFromDB) {
-            const inputValue = document.getElementById("select").value
-            setType(inputValue)
-        }
-    }, [dataFromDB])
+    // useEffect(() => {
+    //     if(dataFromDB) {
+    //         const inputValue = document.getElementById("select").value
+    //         setType(inputValue)
+    //     }
+    // }, [dataFromDB])
 
     useEffect(() => {
         console.log(isAdmin)
