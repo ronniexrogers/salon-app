@@ -60,6 +60,7 @@ const Admin = ({ dataFromDB, isLoggedIn }) => {
 
     useEffect(() => {
         console.log(isAdmin)
+        console.log(dataFromDB)
         if(dataFromDB.googleId === '114694917534994982394' || '110622259906074900624'){
             setIsAdmin(true)
         }
