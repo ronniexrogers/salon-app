@@ -6,10 +6,8 @@ const Home = ({ isAdmin }) => {
     
     const navigate = useNavigate()
 
-        return ( 
-            <>
-            { isAdmin ? <Link className="navlink" to="/admin">Admin Portal</Link> : 
-            <div className="home">
+    return ( 
+        <div className="home">
             <div className="welcome-div">
             <p>Welcome!</p>
             <div className="welcome-div-message">
@@ -42,9 +40,9 @@ const Home = ({ isAdmin }) => {
 
             <h2>Want to book an appointment?</h2>
             <Button className="home-button" onClick={() => navigate('/appointment')} >Book now</Button>
-            </div>
-            }
-        </>
+
+            { isAdmin === true ? <Link className="navlink" to="/admin">Admin Portal</Link> : null }
+        </div>
      )
 }
 
