@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 const axios = require('axios')
 
 
-const SignIn = ({ userData, setUserData, isLoggedIn, setIsLoggedIn }) => {
+const SignIn = ({ userData, setUserData, isLoggedIn, setIsLoggedIn, dataFromDB, setIsAdmin, isAdmin }) => {
     
     const clientId = '996392350039-vkem3f69gsnoc5mjo33l1ktuhjeiglsh.apps.googleusercontent.com'
     const [showLoginButton, setShowLoginButton] = useState(true)
@@ -51,6 +51,13 @@ const SignIn = ({ userData, setUserData, isLoggedIn, setIsLoggedIn }) => {
     useEffect(() => {
         createUser()
     }, [userData])
+
+    useEffect(() => {
+        if(dataFromDB.googleId === '114694917534994982394' || '110622259906074900624') {
+          setIsAdmin(true)
+          console.log(isAdmin)
+        }
+      }, [dataFromDB])
 
     return ( 
         <div className="sign-in">
