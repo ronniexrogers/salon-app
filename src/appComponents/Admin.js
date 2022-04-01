@@ -47,17 +47,14 @@ const Admin = ({ dataFromDB, isLoggedIn }) => {
         const result = await postImage({image: file, description})
         setImages([result, ...images])
       }
-      const fileSelected = (e) => {
-        const file = e.target.files[0]
-            setFile(file)
-        }
-
-    // useEffect(() => {
-    //     if(dataFromDB) {
-    //         const inputValue = document.getElementById("select").value
-    //         setType(inputValue)
-    //     }
-    // }, [])
+    const fileSelected = (e) => {
+    const file = e.target.files[0]
+    setFile(file)
+    }
+    const typeSelected = (e) => {
+    const inputValue = e.target.value
+    setType(inputValue)
+    }
 
     useEffect(() => {
         console.log(isAdmin)
@@ -98,7 +95,7 @@ const Admin = ({ dataFromDB, isLoggedIn }) => {
                         id="select"
                         name="select"
                         type="select"
-                        onChange={e => setType(e.target.value)}
+                        onChange={typeSelected}
                         >
                         <option value={"hair"}>
                             Hair
