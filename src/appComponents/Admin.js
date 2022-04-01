@@ -73,7 +73,7 @@ const Admin = ({ dataFromDB, isLoggedIn }) => {
         return (
 
             <>
-            { isAdmin === true ? 
+            {/* { isAdmin === true ?  */}
             <div className="my-profile">
                 <h1>Admin Dashboard</h1>
                 <div className="admin-upload-div">
@@ -166,8 +166,9 @@ const Admin = ({ dataFromDB, isLoggedIn }) => {
                 )) : <p>No past appointments!</p>}
                 </div>    
             </div>
-        </div>: <p>get outta here!</p>
-        }
+        </div>
+        {/* // : <p>get outta here!</p>
+        // } */}
     </>
 
 
