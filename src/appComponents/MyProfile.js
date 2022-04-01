@@ -63,9 +63,7 @@ const MyProfile = ({ dataFromDB, isLoggedIn }) => {
 
     console.log(dataFromDB)
 
-    if(!dataFromDB) return (<p>oopsie, what're ya doin here?! You need to <Link to="/signin">sign in</Link> first!</p>)
-
-    else if(!isLoggedIn) return (<p>oopsie, what're ya doin here?! You need to <Link to="/signin">sign in</Link> first!</p>)
+    if(!dataFromDB || !isLoggedIn) return (<p>oopsie, what're ya doin here?! You need to <Link to="/signin">sign in</Link> first!</p>)
 
     else if(dataFromDB.googleId === '114694917534994982394' || '110622259906074900624') {
         return (
@@ -165,7 +163,6 @@ const MyProfile = ({ dataFromDB, isLoggedIn }) => {
             </div>
         )
     }
-    else if(dataFromDB.googleId !== '114694917534994982394' || '110622259906074900624')
     return ( 
         <div className="my-profile">
             Hello, {dataFromDB.firstName}!
