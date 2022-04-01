@@ -19,6 +19,7 @@ const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [userData, setUserData] = useState({})
   const [dataFromDB, setDataFromDB] = useState(null)
+  let isAdmin = false
 
   useEffect(() => {
     axios.get(`https://ronnie-rogers-capstone-backend.herokuapp.com/api/users/${userData.googleId}`)
@@ -26,6 +27,15 @@ const App = () => {
       setDataFromDB(res.data[0])
     })
   }, [userData])
+
+  useEffect(() => {
+    console.log(isAdmin)
+    console.log(dataFromDB)
+    if(dataFromDB.googleId === '114694917534994982394' || '110622259906074900624'){
+        isAdmin = true
+    }
+    console.log(isAdmin)
+    }, [])
 
   return (
     <div className="App">
@@ -40,7 +50,9 @@ const App = () => {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/myProfile" element={<MyProfile isLoggedIn={ isLoggedIn } dataFromDB={ dataFromDB } />} />
+          { isAdmin &&
           <Route path="/admin" element={<Admin isLoggedIn={ isLoggedIn } dataFromDB={ dataFromDB } />} />
+          }
         </Routes>
         </div>
         <Footer />
