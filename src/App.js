@@ -29,6 +29,13 @@ const App = () => {
     })
   }, [userData])
 
+  useEffect(() => {
+    if(dataFromDB && dataFromDB.googleId === '114694917534994982394' || '110622259906074900624') {
+      setIsAdmin(true)
+      console.log(isAdmin)
+    }
+  }, [dataFromDB])
+
   return (
     <div className="App">
       <Router>
@@ -36,7 +43,7 @@ const App = () => {
         <div className="content-wrap">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/signin" element={<SignIn setIsAdmin={setIsAdmin} isAdmin={isAdmin} setUserData={ setUserData } dataFromDB={ dataFromDB } userData={ userData } setIsLoggedIn={ setIsLoggedIn } isLoggedIn={isLoggedIn} />} />
+          <Route path="/signin" element={<SignIn setUserData={ setUserData } userData={ userData } setIsLoggedIn={ setIsLoggedIn } isLoggedIn={isLoggedIn} />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/appointment" element={<Appointment userData={ userData } isLoggedIn={ isLoggedIn } />} />
           <Route path="/about" element={<About />} />
