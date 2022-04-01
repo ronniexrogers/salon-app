@@ -19,7 +19,7 @@ const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [userData, setUserData] = useState({})
   const [dataFromDB, setDataFromDB] = useState(null)
-  const [isAdmin, setIsAdmin] = useState(false)
+  let isAdmin = false
 
   useEffect(() => {
     console.log(isAdmin)
@@ -31,7 +31,7 @@ const App = () => {
 
   useEffect(() => {
     if(dataFromDB && dataFromDB.googleId === '114694917534994982394') {
-      setIsAdmin(true)
+      isAdmin = true
       console.log(isAdmin)
     }
   }, [dataFromDB])
