@@ -10,6 +10,7 @@ import MyProfile from './appComponents/MyProfile'
 import Footer from './appComponents/Footer'
 import { useEffect, useState } from 'react'
 import Navigation from './appComponents/Nav'
+import Admin from './appComponents/Admin'
 const axios = require('axios')
 
 
@@ -39,6 +40,7 @@ const App = () => {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/myProfile" element={<MyProfile isLoggedIn={ isLoggedIn } dataFromDB={ dataFromDB } />} />
+          <Route path="/admin" element={<Admin isLoggedIn={ isLoggedIn } dataFromDB={ dataFromDB } />} />
         </Routes>
         </div>
         <Footer />
