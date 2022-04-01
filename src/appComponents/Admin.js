@@ -9,7 +9,7 @@ const Admin = ({ dataFromDB, isLoggedIn }) => {
 
     const [appointments, setAppointments] = useState([])
     const [description, setDescription] = useState(null)
-    const [type, setType] = useState(null)
+    const [type, setType] = useState('hair')
     const [images, setImages] = useState([])
     const [file, setFile] = useState()
     const [pastAppointments, setPastAppointments] = useState([])
@@ -63,6 +63,7 @@ const Admin = ({ dataFromDB, isLoggedIn }) => {
             isAdmin = true
         }
     console.log(isAdmin)
+    console.log(type)
     }, [])
 
     useEffect(() => {
