@@ -1,8 +1,8 @@
-import { useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { UncontrolledCarousel, Button } from "reactstrap"
 
 
-const Home = () => {
+const Home = ({ isAdmin }) => {
     
     const navigate = useNavigate()
 
@@ -40,6 +40,8 @@ const Home = () => {
 
             <h2>Want to book an appointment?</h2>
             <Button className="home-button" onClick={() => navigate('/appointment')} >Book now</Button>
+
+            { isAdmin ? <Link className="navlink" to="/admin">Admin Portal</Link> : null }
         </div>
      )
 }

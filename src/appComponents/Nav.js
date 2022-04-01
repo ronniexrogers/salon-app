@@ -11,7 +11,7 @@ import { Nav,
         Collapse 
     } from "reactstrap"
 
-const Navigation = ({ userData, setIsLoggedIn, isLoggedIn }) => {
+const Navigation = ({ userData, setIsLoggedIn, isLoggedIn, isAdmin }) => {
     const [showLogoutButton, setShowLogoutButton] = useState(false)
     const [expand, setExpand] = useState(false)
     const clientId = '996392350039-vkem3f69gsnoc5mjo33l1ktuhjeiglsh.apps.googleusercontent.com'
@@ -97,9 +97,6 @@ const Navigation = ({ userData, setIsLoggedIn, isLoggedIn }) => {
                     </NavItem>
                     <NavItem>
                     <Link className="navlink" to="/myProfile"> My Profile</Link>
-                    </NavItem>
-                    <NavItem>
-                    <Link className="navlink" to="/admin"> Admin</Link>
                     </NavItem>
                     {isLoggedIn ? 
                     <GoogleLogout

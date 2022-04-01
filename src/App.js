@@ -39,10 +39,10 @@ const App = () => {
   return (
     <div className="App">
       <Router>
-        <Navigation userData={ userData } setIsLoggedIn={ setIsLoggedIn } isLoggedIn={isLoggedIn} />
+        <Navigation isAdmin={isAdmin} userData={ userData } setIsLoggedIn={ setIsLoggedIn } isLoggedIn={isLoggedIn} />
         <div className="content-wrap">
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home isAdmin={isAdmin} />} />
           <Route path="/signin" element={<SignIn setUserData={ setUserData } userData={ userData } setIsLoggedIn={ setIsLoggedIn } isLoggedIn={isLoggedIn} />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/appointment" element={<Appointment userData={ userData } isLoggedIn={ isLoggedIn } />} />
