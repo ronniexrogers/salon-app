@@ -30,7 +30,7 @@ const App = () => {
   }, [userData])
 
   useEffect(() => {
-    if(dataFromDB && dataFromDB.googleId === '114694917534994982394' || '110622259906074900624') {
+    if(dataFromDB && dataFromDB.googleId === '114694917534994982394') {
       setIsAdmin(true)
       console.log(isAdmin)
     }
@@ -59,3 +59,5 @@ const App = () => {
 }
 
 export default App
+
+// || '110622259906074900624'
