@@ -14,9 +14,13 @@ const Admin = ({ dataFromDB, isLoggedIn }) => {
     const [file, setFile] = useState()
     const [pastAppointments, setPastAppointments] = useState([])
     const [futureAppointments, setFutureAppointments] = useState([])
+    const [isAdmin, setIsAdmin] = useState(false)
     const todaysDate = new Date().valueOf()
     const modal = document.querySelector('.admin-modal')
 
+    if(dataFromDB.googleId === '114694917534994982394' || '110622259906074900624'){
+        setIsAdmin(true)
+    }
 
     const handleDeleteOne = (id) => {
         axios.delete(`https://ronnie-rogers-capstone-backend.herokuapp.com/api/appointments/${id}`)
@@ -62,8 +66,11 @@ const Admin = ({ dataFromDB, isLoggedIn }) => {
         setFutureAppointments(appointments.filter(appointment => Date.parse(appointment.date) > todaysDate))
         setPastAppointments(appointments.filter(appointment => Date.parse(appointment.date) < todaysDate))
     }, [appointments])
-    if(dataFromDB.googleId === '114694917534994982394' || '110622259906074900624') {
+
         return (
+
+            <>
+            { isAdmin ? 
             <div className="my-profile">
                 <h1>Admin Dashboard</h1>
                 <div className="admin-upload-div">
@@ -154,18 +161,14 @@ const Admin = ({ dataFromDB, isLoggedIn }) => {
                     </div>
 
                 )) : <p>No past appointments!</p>}
-                </div>
-                    
-                </div>
+                </div>    
             </div>
-        )
-    }else if(!dataFromDB || !isLoggedIn) {
-        return (<p>oopsie, what're ya doin here?! You need to <Link to="/signin">sign in</Link> first!</p>)
-    }else{
-        return (
-            <p>uh oh... what do ya think you're doing here? get out!</p>
-        )
-    }
+        </div>: <p>get outta here!</p>
+        }
+    </>
+
+
+    )
 }
  
 export default Admin;
