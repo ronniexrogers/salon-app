@@ -1,10 +1,11 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
+import { Link } from "react-router-dom"
 import { FormGroup, Input, ListGroup, ListGroupItem, Button } from "reactstrap"
 
 
 
-const Admin = ({ dataFromDB }) => {
+const Admin = ({ dataFromDB, isLoggedIn }) => {
 
     const [appointments, setAppointments] = useState([])
     const [description, setDescription] = useState(null)
@@ -61,7 +62,7 @@ const Admin = ({ dataFromDB }) => {
         setFutureAppointments(appointments.filter(appointment => Date.parse(appointment.date) > todaysDate))
         setPastAppointments(appointments.filter(appointment => Date.parse(appointment.date) < todaysDate))
     }, [appointments])
-
+    if(!dataFromDB || !isLoggedIn) return (<p>oopsie, what're ya doin here?! You need to <Link to="/signin">sign in</Link> first!</p>)
     if(dataFromDB.googleId === '114694917534994982394' || '110622259906074900624') {
         return (
             <div className="my-profile">

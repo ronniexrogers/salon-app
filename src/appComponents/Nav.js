@@ -98,6 +98,9 @@ const Navigation = ({ userData, setIsLoggedIn, isLoggedIn }) => {
                     <NavItem>
                     <Link className="navlink" to="/myProfile"> My Profile</Link>
                     </NavItem>
+                    <NavItem>
+                    <Link className="navlink" to="/admin"> Admin</Link>
+                    </NavItem>
                     {isLoggedIn ? 
                     <GoogleLogout
                         clientId={clientId}
