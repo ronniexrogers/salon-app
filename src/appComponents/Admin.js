@@ -18,10 +18,6 @@ const Admin = ({ dataFromDB, isLoggedIn }) => {
     const todaysDate = new Date().valueOf()
     const modal = document.querySelector('.admin-modal')
 
-    if(dataFromDB.googleId === '114694917534994982394' || '110622259906074900624'){
-        setIsAdmin(true)
-    }
-
     const handleDeleteOne = (id) => {
         axios.delete(`https://ronnie-rogers-capstone-backend.herokuapp.com/api/appointments/${id}`)
     }
@@ -54,12 +50,17 @@ const Admin = ({ dataFromDB, isLoggedIn }) => {
         const file = e.target.files[0]
             setFile(file)
         }
-    
+
     useEffect(() => {
         if(dataFromDB) {
             const inputValue = document.getElementById("select").value
             setType(inputValue)
         }
+    console.log(isAdmin)
+        if(dataFromDB.googleId === '114694917534994982394' || '110622259906074900624'){
+            setIsAdmin(true)
+        }
+    console.log(isAdmin)
     }, [])
 
     useEffect(() => {
