@@ -3,7 +3,7 @@ import { FormGroup, Input, ListGroup, ListGroupItem, Button } from "reactstrap"
 
 
 
-const Admin = ({ dataFromDB }) => {
+const Admin = () => {
 
     const [appointments, setAppointments] = useState([])
     const [description, setDescription] = useState(null)
@@ -15,7 +15,6 @@ const Admin = ({ dataFromDB }) => {
     const todaysDate = new Date().valueOf()
     const modal = document.querySelector('.admin-modal')
     const axios = require('axios')
-    let isAdmin = false
 
     const handleDeleteOne = (id) => {
         axios.delete(`https://ronnie-rogers-capstone-backend.herokuapp.com/api/appointments/${id}`)
