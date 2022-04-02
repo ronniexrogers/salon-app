@@ -22,7 +22,6 @@ const App = () => {
   const admin = useRef(false)
 
   useEffect(() => {
-    console.log(admin.isAdmin)
     axios.get(`https://ronnie-rogers-capstone-backend.herokuapp.com/api/users/${userData.googleId}`)
     .then ((res) => {
       setDataFromDB(res.data[0])
@@ -30,11 +29,10 @@ const App = () => {
   }, [userData])
 
   if(dataFromDB) { 
-    if(dataFromDB.googleId === '114694917534994982394' || '110622259906074900624') {
-      admin.isAdmin = true
-      console.log(admin.isAdmin)
+    console.log(admin.isAdmin)
+    dataFromDB.googleId === '114694917534994982394' || '110622259906074900624' ? admin.isAdmin = true : console.log('false!')
+    console.log(admin.isAdmin)
     }
-  }
 
 
 
@@ -61,5 +59,3 @@ const App = () => {
 }
 
 export default App
-
-// || '110622259906074900624'
