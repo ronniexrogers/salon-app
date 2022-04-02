@@ -29,10 +29,12 @@ const App = () => {
     })
   }, [userData])
 
-    if(dataFromDB && (dataFromDB.googleId === '114694917534994982394' || '110622259906074900624')) {
+  if(dataFromDB) { 
+    if(dataFromDB.googleId === '114694917534994982394' || '110622259906074900624') {
       admin.isAdmin = true
       console.log(admin.isAdmin)
     }
+  }
 
 
 
