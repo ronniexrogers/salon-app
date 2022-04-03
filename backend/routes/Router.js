@@ -19,8 +19,6 @@ const transporter = nodemailer.createTransport({
 })
 
 
-
-
 router.get('/:key', (req, res) => {
     const key = req.params.key
     const readStream = downloadFile(key)
@@ -31,28 +29,20 @@ router.post('/createAppointment', upload.single('image'), async (req, res, next)
   try {
 
     const adminOptions = {
-      from: process.env.EMAIL,
+      from: 'Denisse On Fire',
       to: process.env.RECEIVING_EMAIL,
       subject: "New appointment created!",
       text: `Check your site! ${req.body.clientName} created an appointment on ${req.body.date} at ${req.body.time}. Purrrrrr. https://www.denisseonfire.com/`
     }
 
     const userOptions = {
-      from: process.env.EMAIL,
+      from: 'Denisse On Fire',
       to: req.body.email,
       subject: "Thank you for booking your appointment!",
       text: `Thank you, ${req.body.clientName}!  Your appointment has been created for ${req.body.date} at ${req.body.time}. If you have any questions or need to reschedule you can contact me here https://www.denisseonfire.com/contact`
     }
 
     transporter.sendMail(adminOptions, function (err, info) {
-      if(err) {
-        console.log(err)
-        return
-      }
-      console.log(info.response)
-    })
-
-    transporter.sendMail(userOptions, function (err, info) {
       if(err) {
         console.log(err)
         return
@@ -74,7 +64,16 @@ router.post('/createAppointment', upload.single('image'), async (req, res, next)
       email: req.body.email,
       googleId: req.body.googleId
     }
-    await new Appointment(appointmentData).save() }
+    await new Appointment(appointmentData).save() 
+
+    transporter.sendMail(userOptions, function (err, info) {
+      if(err) {
+        console.log(err)
+        return
+      }
+      console.log(info.response)
+    })
+  }
     catch(error) {
       console.log(error)
     }
