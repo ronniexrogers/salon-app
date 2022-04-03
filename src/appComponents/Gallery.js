@@ -11,7 +11,6 @@ const Gallery = ({ isAdmin }) => {
     const [allPhotos, setAllPhotos] = useState([])
     const deleteButton = document.getElementsByClassName('gallery-delete')
 
-
     useEffect(() => {
         axios.get(`https://ronnie-rogers-capstone-backend.herokuapp.com/api/salonPhotos`)
         .then ((res) => {
@@ -37,9 +36,9 @@ const Gallery = ({ isAdmin }) => {
         axios.delete(`https://ronnie-rogers-capstone-backend.herokuapp.com/api/salonPhotos/${id}`)
     }
 
-    // if(deleteButton) {
-    //     isAdmin === true ? deleteButton.map((button) => (button.style.display = "block")) : deleteButton.map((button) => (button.style.display = "none"))
-    // }
+    if(deleteButton) {
+        isAdmin === true ? deleteButton.map((button) => (button.style.display = "block")) : deleteButton.map((button) => (button.style.display = "none"))
+    }
 
     return ( 
         <div className="gallery">
