@@ -16,17 +16,11 @@ const MyProfile = ({ dataFromDB, isLoggedIn, isAdmin }) => {
         axios.get(`https://ronnie-rogers-capstone-backend.herokuapp.com/api/appointments`)
         .then ((res) => {
             setAppointments(res.data)
-            setUserAppointments(appointments.filter(appointment => appointment.googleId === dataFromDB.googleId))
         })
-    }, [appointments])
-
-    useEffect(() => {
-        console.log(userAppointments)
         console.log(appointments)
-        console.log(dataFromDB)
-        // setUserAppointments(appointments.filter(appointment => appointment.googleId === dataFromDB.googleId))
+        setUserAppointments(appointments.filter(appointment => appointment.googleId === dataFromDB.googleId))
         console.log(userAppointments)
-    }, [])
+    }, [appointments])
 
     useEffect(() => {
         setFutureAppointments(userAppointments.filter(appointment => Date.parse(appointment.date) > todaysDate))
