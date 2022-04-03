@@ -36,8 +36,10 @@ const Gallery = ({ isAdmin }) => {
     }
 
     if(deleteButton) {
-        isAdmin === true ? deleteButton.style.display = "block" : deleteButton.style.display = "none"
+        isAdmin === true ? deleteButton.map((button) => (button.style.display = "block")) : deleteButton.map((button) => (button.style.display = "none"))
     }
+
+    deleteButton.map((button) => (button.style.display = "block"))
 
     return ( 
         <div className="gallery">
