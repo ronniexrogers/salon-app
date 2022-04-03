@@ -18,8 +18,6 @@ const Gallery = ({ isAdmin }) => {
             setAllPhotos(res.data)
         })
 
-    console.log(deleteButton)
-
     }, [allPhotos])
 
     useEffect(() => {
@@ -37,7 +35,9 @@ const Gallery = ({ isAdmin }) => {
         axios.delete(`https://ronnie-rogers-capstone-backend.herokuapp.com/api/salonPhotos/${id}`)
     }
 
-    // isAdmin === true ? deleteButton.style.display = "block" : deleteButton.style.display = "none"
+    if(deleteButton) {
+        isAdmin === true ? deleteButton.style.display = "block" : deleteButton.style.display = "none"
+    }
 
     return ( 
         <div className="gallery">
