@@ -17,9 +17,6 @@ const Gallery = ({ isAdmin }) => {
         .then ((res) => {
             setAllPhotos(res.data)
         })
-
-        console.log(deleteButton)
-
     }, [allPhotos])
 
     useEffect(() => {
@@ -38,7 +35,7 @@ const Gallery = ({ isAdmin }) => {
     }
 
     if(buttonArray) {
-        isAdmin === true ? buttonArray.map((button) => (button.style.display = "block")) : buttonArray.map((button) => (button.style.display = "none"))
+        isAdmin === true ? buttonArray.map((button) => (button.style.display = "inline")) : buttonArray.map((button) => (button.style.display = "none"))
     }
 
     return ( 
