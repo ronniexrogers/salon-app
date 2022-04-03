@@ -40,7 +40,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home isAdmin={admin.isAdmin} />} />
           <Route path="/signin" element={<SignIn setUserData={ setUserData } userData={ userData } setIsLoggedIn={ setIsLoggedIn } isLoggedIn={isLoggedIn} />} />
-          <Route path="/gallery" element={<Gallery />} />
+          <Route path="/gallery" element={<Gallery isAdmin={ admin.isAdmin } />} />
           <Route path="/appointment" element={<Appointment userData={ userData } isLoggedIn={ isLoggedIn } />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />

@@ -288,6 +288,10 @@ h1, h2, h5{
   border-radius: 300px;
 }
 
+.gallery-delete{
+  display: none;
+}
+
 @media only screen and (max-width: 800px) {
 
   .welcome-div{

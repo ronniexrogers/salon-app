@@ -20,13 +20,6 @@ const Admin = ({ appointments }) => {
         axios.delete(`https://ronnie-rogers-capstone-backend.herokuapp.com/api/appointments/${id}`)
     }
 
-    // useEffect(() => {
-    //     axios.get(`https://ronnie-rogers-capstone-backend.herokuapp.com/api/appointments`)
-    //     .then ((res) => {
-    //         setAppointments(res.data)
-    //     })
-    // }, [appointments]) 
-
     const postImage = async ({image, description}) => {
         modal.style.display = "block"
         const formData = new FormData()

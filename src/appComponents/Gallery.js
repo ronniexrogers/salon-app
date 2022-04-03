@@ -4,11 +4,13 @@ import { UncontrolledCarousel, Col, CardTitle, CardText, Button, Card, Row } fro
 const axios = require('axios')
 
 
-const Gallery = () => {
+const Gallery = ({ isAdmin }) => {
 
     const [hairPhotos, setHairPhotos] = useState([])
     const [nailPhotos, setNailPhotos] = useState([])
     const [allPhotos, setAllPhotos] = useState([])
+    const deleteButton = document.querySelector('.gallery-delete')
+
 
     useEffect(() => {
         axios.get(`https://ronnie-rogers-capstone-backend.herokuapp.com/api/salonPhotos`)
@@ -27,8 +29,11 @@ const Gallery = () => {
         )))
     }, [allPhotos])
 
+    const handleDeleteOne = (id) => {
+        axios.delete(`https://ronnie-rogers-capstone-backend.herokuapp.com/api/salonPhotos/${id}`)
+    }
 
-    if(allPhotos === []) return (<p>loading...</p>)
+    isAdmin === true ? deleteButton.style.display = "block" : deleteButton.style.display = "none"
 
     return ( 
         <div className="gallery">
@@ -41,6 +46,7 @@ const Gallery = () => {
                 <Card key={index} body>
                 <CardText>
                 <img key={photo._id} src={photo.imagePath} alt={photo.description} />
+                <Button className="gallery-delete" color="danger" size="sm" onClick={() => handleDeleteOne(photo._id)}>Delete Photo</Button>
                 </CardText>
                 </Card>
                 ))
@@ -54,6 +60,7 @@ const Gallery = () => {
                 <Card key={index} body>
                 <CardText>
                 <img key={photo._id} src={photo.imagePath} alt={photo.description} />
+                <Button className="gallery-delete" color="danger" size="sm" onClick={() => handleDeleteOne(photo._id)}>Delete Photo</Button>
                 </CardText>
                 </Card>
                 ))
