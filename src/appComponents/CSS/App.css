@@ -226,12 +226,13 @@ img {
 
 .welcome-div{
   font-family: 'Lobster';
-  /* color: rgba(255, 87, 115, 0.842); */
+  color: pink;
   -webkit-text-stroke: black .4px;
   letter-spacing: 1px;
   font-size: 72px;
   background: -webkit-linear-gradient(rgba(255, 87, 115, 0.226), rgba(255, 87, 115, 0.842));
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
