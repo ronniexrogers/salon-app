@@ -10,7 +10,6 @@ import MyProfile from './appComponents/MyProfile'
 import Footer from './appComponents/Footer'
 import { useEffect, useState, useRef } from 'react'
 import Navigation from './appComponents/Nav'
-import Admin from './appComponents/Admin'
 const axios = require('axios')
 
 
@@ -29,7 +28,7 @@ const App = () => {
   }, [userData])
 
   if(dataFromDB) { 
-    dataFromDB.googleId === '114694917534994982394' ? admin.isAdmin = true : admin.isAdmin = false
+    (dataFromDB.googleId === '114694917534994982394' || '110622259906074900624') ? admin.isAdmin = true : admin.isAdmin = false
     console.log(admin.isAdmin)
     }
 
@@ -47,7 +46,6 @@ const App = () => {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/myProfile" element={<MyProfile isAdmin={ admin.isAdmin } isLoggedIn={ isLoggedIn } dataFromDB={ dataFromDB } />} />
-          <Route path="/admin" element={<Admin isLoggedIn={ isLoggedIn } dataFromDB={ dataFromDB } />} />
         </Routes>
         </div>
         <Footer />
