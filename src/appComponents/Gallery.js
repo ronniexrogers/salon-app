@@ -49,7 +49,7 @@ const Gallery = ({ isAdmin }) => {
                 <Card key={index} body>
                 <CardText>
                 <img key={photo._id} src={photo.imagePath} alt={photo.description} />
-                <Button className="gallery-delete" block color="danger" size="sm" onClick={() => handleDeleteOne(photo._id)}>Delete Photo</Button>
+                <Button className="gallery-delete" color="danger" size="sm" onClick={() => handleDeleteOne(photo._id)}>Delete Photo</Button>
                 </CardText>
                 </Card>
                 ))
@@ -63,7 +63,7 @@ const Gallery = ({ isAdmin }) => {
                 <Card key={index} body>
                 <CardText>
                 <img key={photo._id} src={photo.imagePath} alt={photo.description} />
-                <Button className="gallery-delete" block color="danger" size="sm" onClick={() => handleDeleteOne(photo._id)}>Delete Photo</Button>
+                <Button className="gallery-delete" color="danger" size="sm" onClick={() => handleDeleteOne(photo._id)}>Delete Photo</Button>
                 </CardText>
                 </Card>
                 ))
