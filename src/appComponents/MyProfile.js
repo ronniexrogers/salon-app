@@ -19,9 +19,11 @@ const MyProfile = ({ dataFromDB, isLoggedIn, isAdmin }) => {
         })
     }, [appointments])
 
-    setUserAppointments(appointments.filter((appointment) => {
-        return appointment.googleId === dataFromDB.googleId
-    }))
+    useEffect(() => {
+        setUserAppointments(appointments.filter((appointment) => {
+            return appointment.googleId === dataFromDB.googleId
+        }))
+    }, [])
 
     useEffect(() => {
         setFutureAppointments(userAppointments.filter(appointment => Date.parse(appointment.date) > todaysDate))
