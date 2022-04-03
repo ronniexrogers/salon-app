@@ -10,6 +10,7 @@ const Gallery = ({ isAdmin }) => {
     const [nailPhotos, setNailPhotos] = useState([])
     const [allPhotos, setAllPhotos] = useState([])
     const deleteButton = document.getElementsByClassName('gallery-delete')
+    let buttonArray = Array.from(deleteButton)
 
     useEffect(() => {
         axios.get(`https://ronnie-rogers-capstone-backend.herokuapp.com/api/salonPhotos`)
@@ -36,8 +37,8 @@ const Gallery = ({ isAdmin }) => {
         axios.delete(`https://ronnie-rogers-capstone-backend.herokuapp.com/api/salonPhotos/${id}`)
     }
 
-    if(deleteButton) {
-        isAdmin === true ? deleteButton.map((button) => (button.style.display = "block")) : deleteButton.map((button) => (button.style.display = "none"))
+    if(buttonArray) {
+        isAdmin === true ? buttonArray.map((button) => (button.style.display = "block")) : buttonArray.map((button) => (button.style.display = "none"))
     }
 
     return ( 
