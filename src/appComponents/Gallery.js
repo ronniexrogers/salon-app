@@ -9,7 +9,7 @@ const Gallery = ({ isAdmin }) => {
     const [hairPhotos, setHairPhotos] = useState([])
     const [nailPhotos, setNailPhotos] = useState([])
     const [allPhotos, setAllPhotos] = useState([])
-    const deleteButton = document.querySelector('.gallery-delete')
+    const deleteButton = document.querySelectorAll('.gallery-delete')
 
 
     useEffect(() => {
