@@ -21,6 +21,8 @@ const MyProfile = ({ dataFromDB, isLoggedIn, isAdmin }) => {
 
     useEffect(() => {
         console.log(userAppointments)
+        console.log(appointments)
+        console.log(dataFromDB)
         setUserAppointments(appointments.filter(appointment => appointment.googleId === dataFromDB.googleId))
         console.log(userAppointments)
     }, [])
