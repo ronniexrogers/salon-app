@@ -40,11 +40,10 @@ const MyProfile = ({ dataFromDB, isLoggedIn, isAdmin }) => {
                 }).map(appointment => (
                     <div key={appointment._id} className="single-appointment-div">
                         <ListGroup>
-                       <ListGroupItem color="success">Date: {appointment.date}</ListGroupItem>
+                        <ListGroupItem color="success">Date: {appointment.date}</ListGroupItem>
                         <ListGroupItem>Time: {appointment.time}</ListGroupItem>
-                        <ListGroupItem>Client Name: {appointment.name}</ListGroupItem> 
-                        <ListGroupItem>Client Phone Number: {appointment.number}</ListGroupItem>
-                        <ListGroupItem>Client E-Mail: {appointment.email}</ListGroupItem>
+                        <ListGroupItem>Phone Number: {appointment.number}</ListGroupItem>
+                        <ListGroupItem>E-Mail: {appointment.email}</ListGroupItem>
                         <ListGroupItem>Description: {appointment.description}</ListGroupItem>
                         <ListGroupItem><img src={appointment.imagePath} alt="appointment inspiration" /></ListGroupItem>
                         </ListGroup>
@@ -59,11 +58,10 @@ const MyProfile = ({ dataFromDB, isLoggedIn, isAdmin }) => {
                 }).map(appointment => (
                     <div key={appointment._id} className="single-appointment-div">
                         <ListGroup>
-                        <ListGroupItem color="warning">Date: {appointment.date}</ListGroupItem>
+                        <ListGroupItem color="success">Date: {appointment.date}</ListGroupItem>
                         <ListGroupItem>Time: {appointment.time}</ListGroupItem>
-                        <ListGroupItem>Client Name: {appointment.name}</ListGroupItem> 
-                        <ListGroupItem>Client Phone Number: {appointment.number}</ListGroupItem>
-                        <ListGroupItem>Client E-Mail: {appointment.email}</ListGroupItem>
+                        <ListGroupItem>Phone Number: {appointment.number}</ListGroupItem>
+                        <ListGroupItem>E-Mail: {appointment.email}</ListGroupItem>
                         <ListGroupItem>Description: {appointment.description}</ListGroupItem>
                         <ListGroupItem><img src={appointment.imagePath} alt="appointment inspiration" /></ListGroupItem>
                         </ListGroup>
