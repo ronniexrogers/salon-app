@@ -14,7 +14,7 @@ import { Nav,
 const Navigation = ({ userData, setIsLoggedIn, isLoggedIn, isAdmin }) => {
     const [showLogoutButton, setShowLogoutButton] = useState(false)
     const [expand, setExpand] = useState(false)
-    const clientId = '996392350039-vkem3f69gsnoc5mjo33l1ktuhjeiglsh.apps.googleusercontent.com'
+    const clientId = process.env.GOOGLE_CLIENT_ID
     const navigate = useNavigate()
     const modal = document.querySelector('.loggedout-modal')
 
