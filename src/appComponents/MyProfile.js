@@ -17,9 +17,7 @@ const MyProfile = ({ dataFromDB, isLoggedIn, isAdmin }) => {
         .then ((res) => {
             setAppointments(res.data)
         })
-        console.log(appointments)
         setUserAppointments(appointments.filter(appointment => appointment.googleId === dataFromDB.googleId))
-        console.log(userAppointments)
     }, [appointments])
 
     useEffect(() => {
@@ -33,6 +31,7 @@ const MyProfile = ({ dataFromDB, isLoggedIn, isAdmin }) => {
     else if(!isAdmin){
         return (
             <div className="my-profile">
+            <h1 className="my-profile-header">My Profile</h1>
             Hello, {dataFromDB.firstName}!
             <img className="profile-picture" src={dataFromDB.profilePicturePath} alt="profile" />
             <div className="future-appointments-div">

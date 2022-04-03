@@ -363,8 +363,6 @@ h1, h2, h5{
   }
 
   .appointment-modal, .contact-modal, .admin-modal, .loggedout-modal{
-    /* width: 90vw;
-    height: 50%; */
     position: fixed;
     justify-content: center;
     text-align: center;
@@ -378,6 +376,12 @@ h1, h2, h5{
 
   .modal-button {
     bottom: 0;
+  }
+
+  .profile-picture{
+    width: 300px;
+    height: 300px;
+    border-radius: 300px;
   }
 
 }
