@@ -33,7 +33,7 @@ const Gallery = ({ isAdmin }) => {
         axios.delete(`https://ronnie-rogers-capstone-backend.herokuapp.com/api/salonPhotos/${id}`)
     }
 
-    isAdmin === true ? deleteButton.style.display = "block" : deleteButton.style.display = "none"
+    // isAdmin === true ? deleteButton.style.display = "block" : deleteButton.style.display = "none"
 
     return ( 
         <div className="gallery">
@@ -47,6 +47,7 @@ const Gallery = ({ isAdmin }) => {
                 <CardText>
                 <img key={photo._id} src={photo.imagePath} alt={photo.description} />
                 <Button className="gallery-delete" color="danger" size="sm" onClick={() => handleDeleteOne(photo._id)}>Delete Photo</Button>
+                { isAdmin === true ? deleteButton.style.display = "block" : deleteButton.style.display = "none" }
                 </CardText>
                 </Card>
                 ))
@@ -61,6 +62,7 @@ const Gallery = ({ isAdmin }) => {
                 <CardText>
                 <img key={photo._id} src={photo.imagePath} alt={photo.description} />
                 <Button className="gallery-delete" color="danger" size="sm" onClick={() => handleDeleteOne(photo._id)}>Delete Photo</Button>
+                { isAdmin === true ? deleteButton.style.display = "block" : deleteButton.style.display = "none" }
                 </CardText>
                 </Card>
                 ))
