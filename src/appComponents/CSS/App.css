@@ -282,6 +282,12 @@ h1, h2, h5{
   display: none;
 }
 
+.profile-picture{
+  width: 100px;
+  height: 100px;
+  border-radius: 300px;
+}
+
 @media only screen and (max-width: 800px) {
 
   .welcome-div{
@@ -379,8 +385,8 @@ h1, h2, h5{
   }
 
   .profile-picture{
-    width: 300px;
-    height: 300px;
+    width: 100px;
+    height: 100px;
     border-radius: 300px;
   }
 

@@ -32,7 +32,7 @@ const MyProfile = ({ dataFromDB, isLoggedIn, isAdmin }) => {
         return (
             <div className="my-profile">
             <h1 className="my-profile-header">My Profile</h1>
-            Hello, {dataFromDB.firstName}!
+            <h3>Hello, {dataFromDB.firstName}!</h3>
             <img className="profile-picture" src={dataFromDB.profilePicturePath} alt="profile" />
             <div className="future-appointments-div">
                 <h2>Upcoming Appointments</h2>
