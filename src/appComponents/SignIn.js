@@ -60,7 +60,7 @@ const SignIn = ({ userData, setUserData, isLoggedIn, setIsLoggedIn, }) => {
                 buttonText="Login"
                 onSuccess={onLoginSuccess}
                 onFailure={onLoginFailure}
-                cookiePolicy={'https://denisse-morales.netlify.app'}
+                cookiePolicy={'https://www.denisseonfire.com'}
                 SameSite="None"
                 isSignedIn={true}
                 accesstype= 'offline'

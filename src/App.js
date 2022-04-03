@@ -28,7 +28,7 @@ const App = () => {
   }, [userData])
 
   if(dataFromDB) { 
-    dataFromDB.googleId === '114694917534994982394' || '110622259906074900624' ? admin.isAdmin = true : admin.isAdmin = false
+    dataFromDB.googleId === '114694917534994982394' ? admin.isAdmin = true : admin.isAdmin = false
     console.log(admin.isAdmin)
     }
 
