@@ -3,9 +3,9 @@ import { FormGroup, Input, ListGroup, ListGroupItem, Button } from "reactstrap"
 
 
 
-const Admin = () => {
+const Admin = ({ appointments }) => {
 
-    const [appointments, setAppointments] = useState([])
+    // const [appointments, setAppointments] = useState([])
     const [description, setDescription] = useState(null)
     const [type, setType] = useState('hair')
     const [images, setImages] = useState([])
@@ -20,12 +20,12 @@ const Admin = () => {
         axios.delete(`https://ronnie-rogers-capstone-backend.herokuapp.com/api/appointments/${id}`)
     }
 
-    useEffect(() => {
-        axios.get(`https://ronnie-rogers-capstone-backend.herokuapp.com/api/appointments`)
-        .then ((res) => {
-            setAppointments(res.data)
-        })
-    }, [appointments])
+    // useEffect(() => {
+    //     axios.get(`https://ronnie-rogers-capstone-backend.herokuapp.com/api/appointments`)
+    //     .then ((res) => {
+    //         setAppointments(res.data)
+    //     })
+    // }, [appointments]) 
 
     const postImage = async ({image, description}) => {
         modal.style.display = "block"
