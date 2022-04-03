@@ -15,10 +15,11 @@ const AppointmentCreate = ({ userData }) => {
     const [appointmentDate, setAppointmentDate] = useState('')
     const [email, setEmail] = useState('')
     const [appointmentTime, setAppointmentTime] = useState('')
+    const userGoogleId = userData.googleId
     const modal = document.querySelector('.appointment-modal')
     const navigate = useNavigate()
 
-    const postImage = async ({image, description, clientName, number, appointmentDate, appointmentTime, email}) => {
+    const postImage = async ({image, description, clientName, number, appointmentDate, appointmentTime, email, userGoogleId}) => {
       const formData = new FormData()
       formData.append("image", image)
       formData.append("description", description)
@@ -27,6 +28,7 @@ const AppointmentCreate = ({ userData }) => {
       formData.append("date", appointmentDate)
       formData.append("time", appointmentTime)
       formData.append("email", email)
+      formData.append("googleId", userGoogleId)
       modal.style.display = "block"
       try {
         const result = await axios.post('https://ronnie-rogers-capstone-backend.herokuapp.com/api/appointments/createAppointment', formData, { 
@@ -40,7 +42,7 @@ const AppointmentCreate = ({ userData }) => {
   
     const submit = async (e) => {
       e.preventDefault()
-      const result = await postImage({image: file, description, clientName, number, appointmentDate, appointmentTime, email})
+      const result = await postImage({image: file, description, clientName, number, appointmentDate, appointmentTime, email, userGoogleId})
       setImages([result, ...images])
     }
     const fileSelected = (e) => {

@@ -53,16 +53,6 @@ const Admin = () => {
     setType(inputValue)
     }
 
-    // useEffect(() => {
-    //     console.log(isAdmin)
-    //     console.log(dataFromDB)
-    //     if(dataFromDB.googleId === '114694917534994982394' || '110622259906074900624'){
-    //         isAdmin = true
-    //     }
-    // console.log(isAdmin)
-    // console.log(type)
-    // }, [])
-
     useEffect(() => {
         setFutureAppointments(appointments.filter(appointment => Date.parse(appointment.date) > todaysDate))
         setPastAppointments(appointments.filter(appointment => Date.parse(appointment.date) < todaysDate))

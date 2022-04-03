@@ -29,7 +29,6 @@ const App = () => {
 
   if(dataFromDB) { 
     dataFromDB.googleId === '114694917534994982394' ? admin.isAdmin = true : admin.isAdmin = false
-    console.log(admin.isAdmin)
     }
 
 
