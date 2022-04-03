@@ -18,6 +18,8 @@ const Gallery = ({ isAdmin }) => {
             setAllPhotos(res.data)
         })
 
+        console.log(deleteButton)
+
     }, [allPhotos])
 
     useEffect(() => {
@@ -35,11 +37,9 @@ const Gallery = ({ isAdmin }) => {
         axios.delete(`https://ronnie-rogers-capstone-backend.herokuapp.com/api/salonPhotos/${id}`)
     }
 
-    if(deleteButton) {
-        isAdmin === true ? deleteButton.map((button) => (button.style.display = "block")) : deleteButton.map((button) => (button.style.display = "none"))
-    }
-
-    deleteButton.map((button) => (button.style.display = "block"))
+    // if(deleteButton) {
+    //     isAdmin === true ? deleteButton.map((button) => (button.style.display = "block")) : deleteButton.map((button) => (button.style.display = "none"))
+    // }
 
     return ( 
         <div className="gallery">
