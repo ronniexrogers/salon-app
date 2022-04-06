@@ -1,6 +1,9 @@
 <h1>Salon Website</h1>
 My Capstone project for my Software Engineering Immersive course with General Assembly is a full stack web application for a salon.
 <br><br>
+<a href="https://denisseonfire.com"> <h2>Check it out!</h2> </a>
+<br>
+<br><br>
 <h2>User Stories:</h2>
 <ul>
     <li>As a user I'll be able to create an account</li>
