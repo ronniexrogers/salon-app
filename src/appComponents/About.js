@@ -1,5 +1,3 @@
-import { Nav, NavItem, Navbar, NavbarBrand, NavbarToggler, Collapse, NavLink, UncontrolledDropdown, DropdownToggle, DropdownMenu, NavbarText, DropdownItem } from "reactstrap"
-
 const About = () => {
     return ( 
         <div className="about">

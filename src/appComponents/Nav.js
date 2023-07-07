@@ -48,9 +48,9 @@ const Navigation = ({ userData, setIsLoggedIn, isLoggedIn, isAdmin }) => {
                     <NavItem>
                     <Link className="navlink" to="/appointment"> Book an Appointment </Link>
                     </NavItem>
-                    <NavItem>
+                    {/* <NavItem>
                     <Link className="navlink" to="/gallery"> Gallery </Link>
-                    </NavItem>
+                    </NavItem> */}
                     <NavItem>
                     <Link className="navlink" to="/about"> About </Link>
                     </NavItem>
@@ -86,9 +86,9 @@ const Navigation = ({ userData, setIsLoggedIn, isLoggedIn, isAdmin }) => {
                     <NavItem>
                     <Link className="navlink" to="/appointment"> Book an Appointment </Link>
                     </NavItem>
-                    <NavItem>
+                    {/* <NavItem>
                     <Link className="navlink" to="/gallery"> Gallery </Link>
-                    </NavItem>
+                    </NavItem> */}
                     <NavItem>
                     <Link className="navlink" to="/about"> About </Link>
                     </NavItem>
@@ -135,9 +135,9 @@ const Navigation = ({ userData, setIsLoggedIn, isLoggedIn, isAdmin }) => {
                     <NavItem>
                     <Link className="navlink" to="/appointment"> Book an Appointment </Link>
                     </NavItem>
-                    <NavItem>
+                    {/* <NavItem>
                     <Link className="navlink" to="/gallery"> Gallery </Link>
-                    </NavItem>
+                    </NavItem> */}
                     <NavItem>
                     <Link className="navlink" to="/about"> About </Link>
                     </NavItem>
@@ -157,9 +157,9 @@ const Navigation = ({ userData, setIsLoggedIn, isLoggedIn, isAdmin }) => {
                 <NavItem>
                 <Link className="navlink" to="/appointment"> Book an Appointment </Link>
                 </NavItem>
-                <NavItem>
+                {/* <NavItem>
                 <Link className="navlink" to="/gallery"> Gallery </Link>
-                </NavItem>
+                </NavItem> */}
                 <NavItem>
                 <Link className="navlink" to="/about"> About </Link>
                 </NavItem>
