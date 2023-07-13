@@ -1,4 +1,4 @@
-import { Card, CardHeader, CardBody, CardTitle, CardText, Button, CardFooter } from "reactstrap"
+import { Card, CardFooter } from "reactstrap"
 
 
 const Footer = () => {
